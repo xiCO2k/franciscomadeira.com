@@ -1,0 +1,17 @@
+{
+  "name": "franciscomadeira.com",
+  "version": "1.0.0",
+  "description": "My personal Website",
+  "main": "index.js",
+  "author": "Francisco Madeira",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production npx tailwindcss -i ./style.css -o ./min.css",
+    "start": "npx tailwindcss -i ./style.css -o ./min.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.9"
+  }
+}
