@@ -6,7 +6,7 @@
   "author": "Francisco Madeira",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production npx tailwindcss -i ./style.css -o ./min.css",
+    "build": "NODE_ENV=production npx tailwindcss -i ./style.css -o ./min.css  --minify",
     "start": "npx tailwindcss -i ./style.css -o ./min.css --watch"
   },
   "devDependencies": {
