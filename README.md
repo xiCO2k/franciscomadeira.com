@@ -1,4 +1,4 @@
-![](./pic.jpg)
+![](./public/og-pic.jpg)
 
 # Hello World! 👋
 ## I'm **Francisco Madeira** - A Software Engineer

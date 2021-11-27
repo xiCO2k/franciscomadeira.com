@@ -1,17 +1,25 @@
 {
-  "name": "franciscomadeira.com",
-  "version": "1.0.0",
-  "description": "My personal Website",
-  "main": "index.js",
-  "author": "Francisco Madeira",
-  "license": "MIT",
-  "scripts": {
-    "build": "NODE_ENV=production npx tailwindcss -i ./style.css -o ./min.css  --minify",
-    "start": "npx tailwindcss -i ./style.css -o ./min.css --watch"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.3.4",
-    "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.9"
-  }
+    "name": "franciscomadeira.com",
+    "version": "1.0.0",
+    "description": "My personal Website",
+    "main": "index.js",
+    "author": "Francisco Madeira",
+    "license": "MIT",
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.24",
+        "laravel-mix": "^6.0.39",
+        "lodash": "^4.17.21",
+        "postcss": "^8.4.4",
+        "postcss-import": "^14.0.2",
+        "postcss-nesting": "^10.0.2",
+        "tailwindcss": "^2.2.19"
+    }
 }
