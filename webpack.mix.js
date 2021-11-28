@@ -1,4 +1,11 @@
 const mix = require('laravel-mix');
 
-mix.js('resources/js/app.js', 'public/js')
+mix
+   .js('resources/js/app.js', 'public/js')
+   .extract()
+   .vue(3)
+   .alias({
+        '@': 'resources/js',
+        'ziggy': 'vendor/tightenco/ziggy/dist/vue',
+   })
    .postCss('resources/css/app.css', 'public/css');
