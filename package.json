@@ -6,6 +6,7 @@
     "author": "Francisco Madeira",
     "license": "MIT",
     "scripts": {
+        "start": "npm run hot",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",

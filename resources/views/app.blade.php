@@ -37,6 +37,10 @@
             "description": "I'm Francisco Madeira - a Software Enginner"
         }
     </script>
+    <script src="{{ mix('/js/manifest.js') }}" defer></script>
+    <script src="{{ mix('/js/vendor.js') }}" defer></script>
+    <script src="{{ mix('/js/app.js') }}" defer></script>
+    @routes
 </head>
 <body class="bg-gray-900 p-8 text-white">
     @inertia
