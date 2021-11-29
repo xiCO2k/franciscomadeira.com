@@ -3,7 +3,6 @@
 use App\Models\Post;
 
 it('shows all the posts', function () {
-
     $post = Post::factory()->create();
 
     $response = $this->get('/');
@@ -15,5 +14,5 @@ it('shows all the posts', function () {
             ->has('posts', 1, fn ($page) => $page
                 ->where('title', $post->title)
                 ->etc()
-        ));
+            ));
 });

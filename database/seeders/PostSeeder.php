@@ -13,6 +13,5 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //
     }
 }

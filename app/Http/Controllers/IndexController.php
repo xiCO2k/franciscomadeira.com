@@ -11,7 +11,7 @@ class IndexController extends Controller
     public function __invoke(): Response
     {
         return Inertia::render('Index', [
-            'posts' => Post::all()
+            'posts' => Post::all(),
         ]);
     }
 }
