@@ -6,11 +6,11 @@ import { ZiggyVue } from 'ziggy';
 InertiaProgress.init()
 
 createInertiaApp({
-  resolve: name => import(`./Pages/${name}`),
-  setup({ el, App, props, plugin }) {
-    createApp({ render: () => h(App, props) })
-      .use(plugin)
-      .use(ZiggyVue)
-      .mount(el)
-  },
+    resolve: name => import(`./Pages/${name}`),
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .use(ZiggyVue)
+            .mount(el)
+    },
 })

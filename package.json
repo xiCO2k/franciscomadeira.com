@@ -12,11 +12,14 @@
         "watch": "mix watch",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "lint": "eslint --ext .js,.vue ."
     },
     "devDependencies": {
         "@vue/compiler-sfc": "^3.2.23",
         "axios": "^0.24",
+        "eslint": "^8.3.0",
+        "eslint-plugin-vue": "^8.1.1",
         "laravel-mix": "^6.0.39",
         "lodash": "^4.17.21",
         "postcss": "^8.4.4",
