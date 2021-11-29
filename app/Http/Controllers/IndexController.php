@@ -10,10 +10,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::all();
-
-        return Inertia::render('index', [
-            'posts' => $posts
+        return Inertia::render('Index', [
+            'posts' => Post::all() ?? []
         ]);
     }
 }
