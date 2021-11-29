@@ -1,7 +1,8 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
-import { ZiggyVue } from 'ziggy';
+import { ZiggyVue } from 'ziggy'
+import twemoji from 'twemoji'
 
 InertiaProgress.init()
 
@@ -11,6 +12,9 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .directive('emoji', { mounted(el) {
+                el.innerHTML = twemoji.parse(el.innerHTML)
+            }})
             .mount(el)
     },
 })
