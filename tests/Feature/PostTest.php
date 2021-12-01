@@ -8,7 +8,15 @@ it('opens a post', function () {
     $response = $this->get(route('post.detail', $post));
 
     $response
-        ->assertOk();
+        ->assertOk()
+        ->assertInertia(fn ($page) => $page
+            ->component('Post')
+            ->has('post', fn ($page) => $page
+                ->where('title', $post->title)
+                ->where('description', $post->description)
+                ->etc()
+            )
+        );
 });
 
 it('retuns a 404 if the post is not active', function () {
