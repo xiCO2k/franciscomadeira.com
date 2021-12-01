@@ -9,8 +9,8 @@
         "start": "npm run hot",
         "dev": "npm run development",
         "development": "mix",
-        "watch": "mix watch",
-        "hot": "mix watch --hot",
+        "watch": "TAILWIND_MODE=watch mix watch",
+        "hot": "TAILWIND_MODE=watch mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
         "lint": "eslint --ext .js,.vue ."
