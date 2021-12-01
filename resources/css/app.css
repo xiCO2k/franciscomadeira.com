@@ -6,7 +6,12 @@ html {
 
 body {
     min-height: 100%;
-    font-family: 'Roboto Mono', monospace;
+
+    @apply font-mono bg-gray-900 text-white;
+}
+
+#app {
+    @apply flex flex-col p-8 min-h-screen items-center justify-center;
 }
 
 @tailwind components;

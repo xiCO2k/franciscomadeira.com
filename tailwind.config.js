@@ -1,16 +1,19 @@
 module.exports = {
-    mode: 'jit',
-    purge: [
+    content: [
         './resources/views/**/*.blade.php',
         './resources/js/**/*.js',
         './resources/js/**/*.vue',
     ],
-    darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                mono: ['Roboto Mono', 'monospace'],
+            },
+        },
     },
     variants: {
         extend: {},
     },
     plugins: [],
+
 }

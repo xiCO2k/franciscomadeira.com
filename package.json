@@ -25,7 +25,7 @@
         "postcss": "^8.4.4",
         "postcss-import": "^14.0.2",
         "postcss-nesting": "^10.0.2",
-        "tailwindcss": "^2.2.19",
+        "tailwindcss": "next",
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
