@@ -24,6 +24,9 @@ module.exports = {
         'vue/html-indent': ['error', 4],
         'vue/multi-word-component-names': ['off'],
         'vue/require-default-prop': ['off'],
+        'vue/max-attributes-per-line': ['error', {
+            singleline: { max: 3 },
+        }],
     },
     globals: {
         route: 'readonly',
