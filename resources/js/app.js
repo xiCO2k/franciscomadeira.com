@@ -1,8 +1,9 @@
 import { createApp, h } from 'vue'
-import { createInertiaApp } from '@inertiajs/inertia-vue3'
+import { createInertiaApp, Link } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 import MainLayout from '@/Shared/MainLayout'
 import { ZiggyVue } from 'ziggy'
+import { Shiki } from './shiki'
 import twemoji from 'twemoji'
 
 InertiaProgress.init()
@@ -25,6 +26,8 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(Shiki)
+            .component('Link', Link)
             .directive('emoji', { mounted(el) {
                 el.innerHTML = twemoji.parse(el.innerHTML)
             }})

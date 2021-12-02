@@ -1,9 +1,11 @@
 <template>
     <nav class="space-x-8 text-gray-400 text-base">
-        <a
+        <Link
             :href="route('about')"
             class="hover:underline hover:text-gray-100"
-        >About</a>
+        >
+            About
+        </Link>
         <a
             href="https://github.com/xico2k"
             target="_blank"
