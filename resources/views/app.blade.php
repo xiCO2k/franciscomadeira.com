@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="Francisco Madeira">
     <meta name="theme-color" content="#111827">
     <link rel="icon" type="image/png" href="{{ asset('/favicon.png') }}" />
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-    <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -26,10 +25,10 @@
                     "height": 500
                 }
             },
-            "url": "{{ route('home') }}",
+            "url": "https://franciscomadeira.com",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "{{ route('home') }}"
+                "@id": "https://franciscomadeira.com"
             },
             "description": "I'm Francisco Madeira - a Software Developer"
         }
