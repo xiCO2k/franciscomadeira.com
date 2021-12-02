@@ -1,4 +1,5 @@
 <template>
+    <Head title="Francisco Madeira" />
     <HomeHeader />
     <section
         v-if="posts.length > 0"
