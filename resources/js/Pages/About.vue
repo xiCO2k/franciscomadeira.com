@@ -8,6 +8,7 @@
         <meta property="og:image" :content="route('home') + '/og-about.png'">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@xico2k">
+        <meta name="twitter:image" :content="route('home') + '/og-about.png'">
     </Head>
     <article class="max-w-4xl mx-auto text-lg">
         <div class="text-center mb-4 sm:mb-8">

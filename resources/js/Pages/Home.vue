@@ -7,6 +7,7 @@
         <meta property="og:image" :content="route('home') + '/og-pic.jpg'">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@xico2k">
+        <meta name="twitter:image" :content="route('home') + '/og-about.png'">
         <meta name="description" content="I'm Francisco Madeira - a Software Developer">
     </Head>
     <HomeHeader />
