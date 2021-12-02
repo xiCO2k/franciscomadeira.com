@@ -5,8 +5,8 @@ setCDN('https://unpkg.com/shiki/')
 
 export const highlighter = () => {
     const theme = 'github-dark';
-    let highlighter = false;
     const loaded = ref(false);
+    let highlighter;
 
     const install = async () => {
         if (highlighter) {
@@ -19,6 +19,8 @@ export const highlighter = () => {
         });
 
         loaded.value = true;
+
+        return highlighter;
     }
 
     const getLines = (text, lang) => {
@@ -32,15 +34,16 @@ export const highlighter = () => {
         return highlighter.codeToThemedTokens(text, lang, theme);
     }
 
-    return {
-        install, getLines, loaded,
-    }
+    return { install, getLines, loaded }
 }
 
 export const Shiki = {
-    install: (app) => {
+    install: (app, shouldInstall = false) => {
         const instance = highlighter();
         app.provide('highlighter', instance);
-        instance.install();
+
+        if (shouldInstall) {
+            instance.install();
+        }
     },
 }

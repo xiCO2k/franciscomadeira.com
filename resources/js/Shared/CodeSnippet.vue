@@ -46,6 +46,7 @@ const lines = ref('');
 const slots = useSlots();
 const highlighter = inject('highlighter');
 
+highlighter.install();
 onMounted(() => setCode());
 watch(highlighter.loaded, () => setCode());
 
@@ -61,7 +62,6 @@ const tokenFontStyle = ({ fontStyle }) => ({
     1: 'italic',
     4: 'underline',
 })[fontStyle];
-
 </script>
 
 <style module>
