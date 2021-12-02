@@ -34,7 +34,7 @@
             <ul class="mt-4">
                 <li>
                     <a
-                        href="https://github.com/nunomaduro/"
+                        href="https://github.com/nunomaduro/termwind"
                         class="text-gray-200 hover:text-white font-bold border-b-2 border-blue-300"
                         rel="noreferrer"
                         target="_blank"
