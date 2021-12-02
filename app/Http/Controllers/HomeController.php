@@ -6,11 +6,11 @@ use App\Models\Post;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class IndexController extends Controller
+class HomeController extends Controller
 {
     public function __invoke(): Response
     {
-        return Inertia::render('Index', [
+        return Inertia::render('Home', [
             'posts' => Post::all(),
         ]);
     }

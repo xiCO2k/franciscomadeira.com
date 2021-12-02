@@ -1,7 +1,7 @@
 <template>
     <header class="flex w-full max-w-7xl items-center justify-between mb-16">
         <Link
-            :href="route('index')"
+            :href="route('home')"
             class="flex items-center"
         >
             <img
