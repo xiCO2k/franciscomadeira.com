@@ -3,7 +3,11 @@
         <meta
             name="description"
             content="I'm Francisco Madeira, 32 years old, I've been working as a Sofware Developer since 2010. Everyday I get to work with PHP, MySQL, TypeScript, JavaScript and I'm an HUGE fan of the Test-Driven Development principle, and I've been using it on all my projects."
-        />
+        >
+        <meta
+            property="og:description"
+            content="I'm Francisco Madeira, 32 years old, I've been working as a Sofware Developer since 2010. Everyday I get to work with PHP, MySQL, TypeScript, JavaScript and I'm an HUGE fan of the Test-Driven Development principle, and I've been using it on all my projects."
+        >
     </Head>
     <article class="max-w-4xl mx-auto text-lg">
         <div class="text-center mb-4 sm:mb-8">
