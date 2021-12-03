@@ -7,7 +7,6 @@
                 class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
                 alt="Francisco Madeira"
             >
-            <picture>
         </picture>
         <h1
             v-emoji
