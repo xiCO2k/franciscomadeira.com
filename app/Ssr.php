@@ -21,10 +21,6 @@ final class Ssr
     {
         $output = exec(sprintf("node %s '%s'", public_path('js/ssr.js'), json_encode($page)));
 
-        if ($output === false) {
-            return [];
-        }
-
-        return json_decode($output, true);
+        return json_decode($output !== false ? $output : '[]' , true);
     }
 }
