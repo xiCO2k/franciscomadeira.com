@@ -7,11 +7,11 @@ html {
 body {
     min-height: 100%;
 
-    @apply font-mono bg-gray-900 text-white;
+    @apply flex font-mono bg-gray-900 text-white;
 }
 
 #app {
-    @apply flex flex-col min-h-screen items-center justify-center;
+    @apply flex flex-col items-center justify-center;
 }
 
 @tailwind components;
