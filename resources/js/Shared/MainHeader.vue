@@ -4,11 +4,14 @@
             :href="route('home')"
             class="flex items-center"
         >
-            <img
-                src="/og-square.jpg"
-                class="w-14 h-14 sm:w-20 sm:h-20 border-4 sm:border-4 border-gray-800 rounded-full"
-                alt="Francisco Madeira"
-            >
+            <picture>
+                <source type="image/webp" srcset="/og-square.webp">
+                <img
+                    src="/og-square.jpg"
+                    class="w-14 h-14 sm:w-20 sm:h-20 border-4 sm:border-4 border-gray-800 rounded-full"
+                    alt="Francisco Madeira"
+                >
+            </picture>
             <div class="hidden sm:block ml-4 font-bold text-2xl">
                 Francisco Madeira
             </div>
