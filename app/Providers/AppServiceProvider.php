@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Ssr;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app->singleton(Ssr::class, fn () => new Ssr());
     }
 }

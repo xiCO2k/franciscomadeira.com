@@ -37,8 +37,16 @@
     <script src="{{ mix('/js/vendor.js') }}" defer></script>
     <script src="{{ mix('/js/app.js') }}" defer></script>
     @routes
+
+    @foreach(ssr($page, 'head') ?? [] as $element)
+        {!! $element !!}
+    @endforeach
 </head>
 <body>
-    @inertia
+    @if (ssr($page, 'body'))
+        {!! ssr($page, 'body') !!}
+    @else
+        @inertia
+    @endif
 </body>
 </html>
