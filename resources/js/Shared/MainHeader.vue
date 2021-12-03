@@ -1,5 +1,5 @@
 <template>
-    <header class="flex w-full max-w-7xl items-center justify-between mb-4 sm:mb-8">
+    <header class="pt-8 px-8 flex w-full max-w-7xl items-center justify-between mb-4 sm:mb-8">
         <Link
             :href="route('home')"
             class="flex items-center"
