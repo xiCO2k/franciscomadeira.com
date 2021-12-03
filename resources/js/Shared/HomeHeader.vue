@@ -1,10 +1,14 @@
 <template>
     <header class="flex flex-col items-center px-4">
-        <img
-            src="/og-square.jpg"
-            class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
-            alt="Francisco Madeira"
-        >
+        <picture>
+            <source type="image/webp" srcset="/og-square.webp">
+            <img
+                src="/og-square.jpg"
+                class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
+                alt="Francisco Madeira"
+            >
+            <picture>
+        </picture>
         <h1
             v-emoji
             class="text-3xl sm:text-6xl font-bold tracking-tight"
