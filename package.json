@@ -12,7 +12,7 @@
         "watch": "TAILWIND_MODE=watch mix watch",
         "hot": "TAILWIND_MODE=watch mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production",
+        "production": "npm run ssr && mix --production",
         "ssr": "mix --mix-config=webpack.ssr.mix.js",
         "lint": "eslint --ext .js,.vue ."
     },
