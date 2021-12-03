@@ -2,19 +2,21 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Cache;
+
 final class Ssr
 {
-    protected array $pages = [];
-
     public function get(array $page, string $item = null): array|string
     {
-        $component = $page['component'];
+        $key = $page['component'] . $page['version'];
 
-        if (! array_key_exists($component, $this->pages)) {
-            $this->pages[$component] = $this->exec($page);
+        $data = Cache::get($key);
+
+        if (! $data) {
+            Cache::add($key, $data = $this->exec($page));
         }
 
-        return $item ? $this->pages[$component][$item] : $this->pages[$component];
+        return $item ? $data[$item] : $data;
     }
 
     public function exec(array $page): array
