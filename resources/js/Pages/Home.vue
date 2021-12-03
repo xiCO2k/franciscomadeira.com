@@ -1,16 +1,16 @@
 <template>
     <Head title="Francisco Madeira">
-        <meta property="og:title" content="Francisco Madeira" />
-        <meta property="og:description" content="I'm Francisco Madeira - a Software Developer" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://franciscomadeira.com/" />
-        <meta property="og:image" content="https://franciscomadeira.com/og-pic.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@xico2k" />
-        <meta name="twitter:image" content="https://franciscomadeira.com/og-pic.jpg" />
-        <meta name="twitter:title" content="Francisco Madeira" />
-        <meta name="twitter:description" content="I'm Francisco Madeira - a Software Developer" />
-        <meta name="description" content="I'm Francisco Madeira - a Software Developer" />
+        <meta property="og:title" content="Francisco Madeira">
+        <meta property="og:description" content="I'm Francisco Madeira - a Software Developer">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://franciscomadeira.com/">
+        <meta property="og:image" content="https://franciscomadeira.com/og-pic.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@xico2k">
+        <meta name="twitter:image" content="https://franciscomadeira.com/og-pic.jpg">
+        <meta name="twitter:title" content="Francisco Madeira">
+        <meta name="twitter:description" content="I'm Francisco Madeira - a Software Developer">
+        <meta name="description" content="I'm Francisco Madeira - a Software Developer">
     </Head>
     <HomeHeader />
     <section

@@ -38,10 +38,10 @@ createInertiaApp({
                     route: (name, params, absolute) => {
                         return route(name, params, absolute, {
                             ...page.props.ziggy,
-                            location: new URL(page.props.ziggy.url)
+                            location: new URL(page.props.ziggy.url),
                         })
                     },
-                }
+                },
             });
     },
 }).then((output) => console.log(JSON.stringify(output)));

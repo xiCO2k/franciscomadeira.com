@@ -15,5 +15,5 @@ mix
         externals: [webpackNodeExternals()],
     })
     .options({
-        legacyNodePolyfills: false
+        legacyNodePolyfills: false,
     });
