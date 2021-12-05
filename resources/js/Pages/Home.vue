@@ -15,7 +15,7 @@
     <HomeHeader />
     <section
         v-if="posts.length > 0"
-        class="mt-8 pt-4 px-4 max-w-2xl mx-auto space-y-4 border-t border-gray-800"
+        class="mt-8 mx-4 sm:mx-0 pt-4 max-w-2xl mx-auto space-y-4 border-t border-gray-800"
     >
         <PostCard
             v-for="post in posts"
