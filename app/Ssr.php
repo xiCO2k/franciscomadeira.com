@@ -14,7 +14,7 @@ final class Ssr
      */
     public function get(array $page, string $item = null): array|string
     {
-        $key = $page['component'] . $page['version'];
+        $key = $page['url'] . $page['version'];
 
         $data = Cache::get($key);
 
@@ -32,8 +32,7 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        $output = exec(sprintf("node %s '%s'", public_path('js/ssr.js'), json_encode($page)));
-
+        $output = exec(sprintf("node %s '%s'", public_path('js/ssr.js'), str_replace("'", "’", json_encode($page))));
         return json_decode($output !== "" && $output !== false ? $output : '[]' , true);
     }
 }

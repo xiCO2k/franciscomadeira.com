@@ -7,6 +7,7 @@ export const highlighter = () => {
     const theme = 'github-dark';
     const loaded = ref(false);
     const loading = ref(false);
+    const isServer = typeof window === 'undefined'
     let highlighter;
 
     const install = async () => {
@@ -19,7 +20,7 @@ export const highlighter = () => {
         const langs = ['html', 'php', {
             id: 'blade',
             scopeName: 'text.html.php.blade',
-            path: 'languages/blade.tmLanguage.json',
+            path: (isServer ? '../../public/shiki/' : '') + 'languages/blade.tmLanguage.json',
             embeddedLangs: ['html', 'php'],
         }];
         highlighter = await getHighlighter({ theme, langs });

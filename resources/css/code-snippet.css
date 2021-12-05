@@ -1,0 +1,15 @@
+.code-snippet {
+
+    & .line {
+        display: block;
+    }
+
+    & .number {
+        width: 1rem;
+        margin-right: 1rem;
+        text-align: right;
+
+        user-select: none;
+        color: rgba(255, 255, 255, 0.3);
+    }
+}

@@ -18,12 +18,11 @@
                 <span
                     v-for="(line, lineIndex) in lines"
                     :key="`line-${lineIndex}`"
-                    :class="$style.line"
+                    class="line"
                 >
                     <span
                         v-if="lineNumbers"
-                        :class="$style.number"
-                        class="hidden sm:inline-block"
+                        class="number hidden sm:inline-block"
                     >{{ lineIndex + 1 }}</span>
                     <span v-if="line.length === 0">&#10;</span>
                     <span
@@ -68,18 +67,3 @@ const tokenFontStyle = ({ fontStyle }) => ({
     4: 'underline',
 })[fontStyle];
 </script>
-
-<style module>
-.line {
-    display: block;
-}
-
-.number {
-    width: 1rem;
-    margin-right: 1rem;
-    text-align: right;
-
-    user-select: none;
-    color: rgba(255, 255, 255, 0.3);
-}
-</style>
