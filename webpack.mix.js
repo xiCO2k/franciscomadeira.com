@@ -12,7 +12,12 @@ mix
     .postCss('resources/css/app.css', 'public/css')
     .version()
     .disableNotifications()
-    .sourceMaps();
+    .sourceMaps()
+    .webpackConfig({
+        stats: {
+             children: true
+        }
+    });
 
 if (isHot) {
     mix.setResourceRoot('//localhost:8080');

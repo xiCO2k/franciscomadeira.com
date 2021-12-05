@@ -1,21 +1,12 @@
-@tailwind base;
+@import "tailwindcss/base";
 
-html {
-    height: 100%;
-}
+@import './base';
 
-body {
-    min-height: 100%;
+@import "tailwindcss/components";
 
-    @apply flex font-mono bg-gray-900 text-white;
-}
+@import './article';
 
-#app {
-    @apply flex flex-col items-center justify-center min-w-full;
-}
-
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/utilities";
 
 img.emoji {
     display: inline;

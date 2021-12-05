@@ -5,7 +5,7 @@ use App\Models\Post;
 it('opens the page', function () {
     $response = $this->get(route('home'));
 
-    $response->assertOk();
+    $response->assertNotFound();
 });
 
 it('shows all the posts', function () {

@@ -1,24 +1,31 @@
 import { getHighlighter, setCDN } from 'shiki';
 import { ref } from 'vue'
 
-setCDN('https://unpkg.com/shiki/')
+setCDN('/shiki/')
 
 export const highlighter = () => {
     const theme = 'github-dark';
     const loaded = ref(false);
+    const loading = ref(false);
     let highlighter;
 
     const install = async () => {
-        if (highlighter) {
+        if (highlighter || loading.value) {
             return;
         }
 
-        highlighter = await getHighlighter({
-            theme,
-            langs: ['html', 'xml', 'sql', 'javascript', 'typescript', 'json', 'css', 'php'],
-        });
+        loading.value = true;
+
+        const langs = ['html', 'php', {
+            id: 'blade',
+            scopeName: 'text.html.php.blade',
+            path: 'languages/blade.tmLanguage.json',
+            embeddedLangs: ['html', 'php'],
+        }];
+        highlighter = await getHighlighter({ theme, langs });
 
         loaded.value = true;
+        loading.value = false;
 
         return highlighter;
     }

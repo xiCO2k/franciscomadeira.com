@@ -1,0 +1,35 @@
+article.article {
+    @apply mt-4 px-6 sm:px-8 max-w-4xl mx-auto;
+
+    & h1 {
+        @apply text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8;
+    }
+
+    & h3 {
+        @apply mt-8 font-bold text-lg lg:text-xl text-center;
+    }
+
+    & p {
+        @apply mt-6;
+    }
+
+    & ul {
+        @apply mt-4 list-disc list-inside ml-3 sm:ml-4 md:ml-6 lg:ml-8;
+    }
+
+    & p, & li {
+        @apply text-opacity-80 text-white leading-6 text-xs sm:leading-8 sm:text-sm md:leading-9 md:text-base;
+
+        & a {
+            @apply text-gray-200 hover:text-white border-b-2 border-blue-300;
+        }
+    }
+
+    & .code {
+        @apply py-1 px-2 bg-gray-700 rounded;
+    }
+
+    & .code-snippet {
+        @apply mt-8;
+    }
+}

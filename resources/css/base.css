@@ -1,0 +1,13 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+
+    @apply flex font-mono bg-gray-900 text-white;
+}
+
+#app {
+    @apply flex flex-col items-center justify-center min-w-full;
+}

@@ -1,17 +1,20 @@
 <template>
-    <div class="px-6 pt-4 pb-0 bg-black rounded-lg bg-opacity-60 mt-6">
-        <div class="flex justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-3 h-3 rounded-full bg-red-600" />
-                <div class="w-3 h-3 rounded-full bg-yellow-500" />
-                <div class="w-3 h-3 rounded-full bg-green-500" />
+    <div class="code-snippet w-full">
+        <div class="px-6 pt-4 pb-0 bg-black rounded-lg bg-opacity-60 w-full">
+            <div class="flex justify-center items-center relative h-6">
+                <div v-if="name" class="hidden sm:block text-gray-500 text-xs sm:text-sm">
+                    {{ name }}
+                </div>
+                <div class="absolute left-0 flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-600" />
+                    <div class="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div class="w-3 h-3 rounded-full bg-green-500" />
+                </div>
+                <div class="absolute right-0 text-xs text-gray-500 font-bold uppercase">
+                    {{ lang }}
+                </div>
             </div>
-            <div class="text-xs text-gray-500 font-bold uppercase">
-                {{ lang }}
-            </div>
-        </div>
-        <div class="py-4 leading-10">
-            <span class="font-mono">
+            <div class="font-mono py-4 text-xs leading-6 sm:text-sm sm:leading-8 overflow-auto whitespace-pre">
                 <span
                     v-for="(line, lineIndex) in lines"
                     :key="`line-${lineIndex}`"
@@ -20,6 +23,7 @@
                     <span
                         v-if="lineNumbers"
                         :class="$style.number"
+                        class="hidden sm:inline-block"
                     >{{ lineIndex + 1 }}</span>
                     <span v-if="line.length === 0">&#10;</span>
                     <span
@@ -30,7 +34,7 @@
                         v-text="token.content"
                     />
                 </span>
-            </span>
+            </div>
         </div>
     </div>
 </template>
@@ -39,6 +43,7 @@ import { ref, onMounted, useSlots, watch, inject } from 'vue';
 
 const props = defineProps({
     lang: String,
+    name: String,
     lineNumbers: Boolean,
 })
 
@@ -67,18 +72,11 @@ const tokenFontStyle = ({ fontStyle }) => ({
 <style module>
 .line {
     display: block;
-    width: 100%;
-
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    word-break: normal;
 }
 
 .number {
     width: 1rem;
-    white-space: pre;
     margin-right: 1rem;
-    display: inline-block;
     text-align: right;
 
     user-select: none;
