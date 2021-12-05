@@ -1,6 +1,7 @@
 <template>
     <Head title="🍃 Termwind v1.0 Released!">
         <meta property="og:title" content="🍃 Termwind v1.0 Released! - Francisco Madeira">
+        <meta name="twitter:title" content="🍃 Termwind v1.0 Released! - Francisco Madeira">
         <meta name="description" content="Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.">
         <meta property="og:description" content="Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.">
         <meta name="twitter:description" content="Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.">
@@ -9,7 +10,6 @@
         <meta property="og:image" content="https://franciscomadeira.com/og-termwind-released.png">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@xico2k">
-        <meta name="twitter:title" content="About - Francisco Madeira">
         <meta name="twitter:image" content="https://franciscomadeira.com/og-termwind-released.png">
     </Head>
     <article class="article">
