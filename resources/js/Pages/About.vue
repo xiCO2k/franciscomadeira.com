@@ -16,7 +16,7 @@
         <div class="text-center mb-4 sm:mb-8">
             <h1
                 v-emoji
-                class="text-2xl sm:text-6xl font-bold tracking-tight"
+                class="!text-3xl sm:!text-6xl"
             >
                 Hello World! 👋
             </h1>

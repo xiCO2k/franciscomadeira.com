@@ -6,7 +6,7 @@ article.article {
     }
 
     & h3 {
-        @apply mt-8 font-bold text-lg lg:text-xl text-center;
+        @apply mt-16 font-bold text-lg lg:text-xl text-center;
     }
 
     & p {
