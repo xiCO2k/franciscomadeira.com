@@ -19,7 +19,10 @@
         <img src="https://raw.githubusercontent.com/nunomaduro/tailcli/master/art/example.png" class="w-full max-w-xl mx-auto">
         <div>
             <p>Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.</p>
-            <p>After almost three months of development <b>Termwind</b> v1.0 is available, and you can start using on your projects.</p>
+            <p>Termwind was created by Francisco Madeira and Nuno Maduro, and after almost three months of development <b>Termwind v1.0 is available</b>, and you can start using on your projects.</p>
+
+            <p>Checkout the repository on <a href="https://github.com/nunomaduro/termwind" rel="noreferrer" target="_blank">GitHub</a>!</p>
+
             <h3>Why?</h3>
             <p>One of many things that annoyed all the CLI developers was to add some margin before the content, just to have some breading room, without <b>Termwind</b> the only way was to add spaces before each line, now with <b>Termwind</b> you can just pass the class <span class="code">ml-2</span> and you will have <b>two spaces</b> on every line for that element, just like how we do for the browser.</p>
             <p><b>This example</b> shows how easy it is to create a beautiful CLI output, with a simple knowledge on <b>HTML</b> and <b>TailwindCSS</b>.</p>
