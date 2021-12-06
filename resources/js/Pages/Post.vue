@@ -25,8 +25,8 @@
             <p>Checkout the repository on <a href="https://github.com/nunomaduro/termwind" rel="noreferrer" target="_blank">GitHub</a>!</p>
 
             <h3>Why?</h3>
-            <p>One of many things that annoyed all the CLI developers was to add some margin before the content, just to have some breading room, without <b>Termwind</b> the only way was to add spaces before each line, now with <b>Termwind</b> you can just pass the class <span class="code">ml-2</span> and you will have <b>two spaces</b> on every line for that element, just like how we do for the browser.</p>
-            <p><b>This example</b> shows how easy it is to create a beautiful CLI output, with a simple knowledge on <b>HTML</b> and <b>TailwindCSS</b>.</p>
+            <p>One of many things that annoyed all the CLI developers was to add some margin before the content, just to have some breathing room, without <b>Termwind</b> the only way was to add spaces before each line, now with <b>Termwind</b> you can just pass the class <span class="code">ml-2</span> and you will have <b>two spaces</b> on every line for that element, just like how we do for the browser.</p>
+            <p><b>This example</b> shows how easy it is to create a beautiful CLI output, with simple knowledge of <b>HTML</b> and <b>TailwindCSS</b>.</p>
 
             <picture class="block mt-6">
                 <img src="../../img/termwind-released.webp" class="w-full max-w-2xl mx-auto">
@@ -77,7 +77,7 @@ class TermwindReleasedCommand extends Command
     {
         return render(view('termwind', [
             'files' => [[
-                'name' => 'Tests\TermwidReleasedTest',
+                'name' => 'Tests\\TermwindReleasedTest',
                 'tests' => [[
                     'name' => 'it is ready to use!',
                 ]],
