@@ -23,7 +23,11 @@ final class Ssr
             Cache::add($key, $data = $this->exec($page));
         }
 
-        return $item && array_key_exists($item, $data) ? $data[$item] : $data;
+        if ($item && array_key_exists($item, $data)) {
+            return is_array($data[$item]) ? implode("\n", $data[$item]) : $data[$item];
+        }
+
+        return $data;
     }
 
     /**
