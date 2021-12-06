@@ -1,13 +1,13 @@
 import { getHighlighter, setCDN } from 'shiki';
 import { ref } from 'vue'
 
+const isServer = typeof window === 'undefined'
 setCDN('/shiki/')
 
 export const highlighter = () => {
     const theme = 'github-dark';
     const loaded = ref(false);
     const loading = ref(false);
-    const isServer = typeof window === 'undefined'
     let highlighter;
 
     const install = async () => {

@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->text('text');
+            $table->string('share_img');
             $table->boolean('is_active')->defaults(true);
             $table->timestamps();
         });

@@ -18,6 +18,7 @@ class PostFactory extends Factory
             'title' => $this->faker->paragraph(),
             'description' => $this->faker->paragraph(),
             'text' => $this->faker->paragraph(5),
+            'share_img' => $this->faker->imageUrl(1200, 628),
             'is_active' => true,
         ];
     }
