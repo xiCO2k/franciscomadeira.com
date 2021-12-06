@@ -17,19 +17,19 @@
             {{ post.title }}
         </h1>
 
-        <img src="../../img/termwind-released-hero.webp" class="w-full max-w-2xl mx-auto">
+        <img src="../../img/termwind-released-hero.webp" class="w-full max-w-2xl mx-auto" alt="PEST Released!">
         <div>
             <p>Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.</p>
             <p>Termwind was created by <a href="https://twitter.com/xiCO2k" rel="noreferrer" target="_blank">Francisco Madeira</a> and <a href="https://twitter.com/enunomaduro" rel="noreferrer" target="_blank">Nuno Maduro</a>, and after almost three months of development <b>Termwind v1.0 is available</b>, and you can start using on your projects.</p>
 
             <p>Checkout the repository on <a href="https://github.com/nunomaduro/termwind" rel="noreferrer" target="_blank">GitHub</a>!</p>
 
-            <h3>Why?</h3>
+            <h2>Why?</h2>
             <p>One of many things that annoyed all the CLI developers was to add some margin before the content, just to have some breathing room, without <b>Termwind</b> the only way was to add spaces before each line, now with <b>Termwind</b> you can just pass the class <span class="code">ml-2</span> and you will have <b>two spaces</b> on every line for that element, just like how we do for the browser.</p>
             <p><b>This example</b> shows how easy it is to create a beautiful CLI output, with simple knowledge of <b>HTML</b> and <b>TailwindCSS</b>.</p>
 
             <picture class="block mt-6">
-                <img src="../../img/termwind-released.webp" class="w-full max-w-2xl mx-auto">
+                <img src="../../img/termwind-released.webp" class="w-full max-w-2xl mx-auto" alt="Termwind Released!">
             </picture>
 
             <CodeSnippet lang="php" line-numbers>
@@ -47,14 +47,14 @@ render(<<<HTML
 HTML);` }}
             </CodeSnippet>
 
-            <h3 class="mt-12">
+            <h2 class="mt-12">
                 Now, lets create an output just like <b>PEST</b>
-            </h3>
+            </h2>
 
             <p>For this example we will take advantage of the <b>Laravel Framework</b> <span class="code">Command</span> with a <span class="code">blade</span> view.</p>
 
             <picture class="block mt-6">
-                <img src="../../img/pest-example.webp" class="w-full max-w-2xl mx-auto">
+                <img src="../../img/pest-example.webp" class="w-full max-w-2xl mx-auto" alt="PEST Example">
             </picture>
 
             <CodeSnippet
