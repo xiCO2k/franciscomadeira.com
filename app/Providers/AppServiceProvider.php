@@ -10,11 +10,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+        Ssr::register();
         Model::unguard();
-    }
-
-    public function boot(): void
-    {
-        $this->app->singleton(Ssr::class, fn () => new Ssr());
     }
 }

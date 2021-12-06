@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\Cache;
 final class Ssr
 {
     /**
+     * Registers this class as a singleton from the app.
+     */
+    public static function register()
+    {
+        app()->singleton(self::class, fn () => new static());
+    }
+
+    /**
      * Gets the static version for the page.
      *
      * @param array<string, mixed> $page
@@ -23,7 +31,11 @@ final class Ssr
             Cache::add($key, $data = $this->exec($page));
         }
 
-        if ($item && array_key_exists($item, $data)) {
+        if ($item) {
+            if (! array_key_exists($item, $data)) {
+                return '';
+            }
+
             return is_array($data[$item]) ? implode("\n", $data[$item]) : $data[$item];
         }
 
@@ -37,6 +49,10 @@ final class Ssr
      */
     public function exec(array $page): array
     {
+        if (! file_exists(public_path('js/ssr.js'))) {
+            return [];
+        }
+
         $output = exec(sprintf(
             "node %s '%s'", public_path('js/ssr.js'),
             str_replace("'", "\\u0027", (string) json_encode($page))
