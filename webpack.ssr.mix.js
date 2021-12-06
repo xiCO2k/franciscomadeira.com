@@ -14,7 +14,6 @@ mix
         target: 'node',
         externals: [webpackNodeExternals()],
     })
-    .mergeManifest()
     .options({
         legacyNodePolyfills: false,
     });
