@@ -16,7 +16,8 @@
         <h1 v-emoji>
             {{ post.title }}
         </h1>
-        <img src="https://raw.githubusercontent.com/nunomaduro/tailcli/master/art/example.png" class="w-full max-w-xl mx-auto">
+
+        <img src="../../img/termwind-released-hero.webp" class="w-full max-w-2xl mx-auto">
         <div>
             <p>Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.</p>
             <p>Termwind was created by <a href="https://twitter.com/xiCO2k" rel="noreferrer" target="_blank">Francisco Madeira</a> and <a href="https://twitter.com/enunomaduro" rel="noreferrer" target="_blank">Nuno Maduro</a>, and after almost three months of development <b>Termwind v1.0 is available</b>, and you can start using on your projects.</p>
