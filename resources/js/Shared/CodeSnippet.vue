@@ -2,7 +2,7 @@
     <div class="code-snippet w-full">
         <div class="px-6 pt-4 pb-0 bg-black rounded-lg bg-opacity-60 w-full">
             <div class="flex justify-center items-center relative h-6">
-                <div v-if="name" class="hidden sm:block text-gray-500 text-xs sm:text-sm">
+                <div v-if="name" class="hidden sm:block text-gray-400 text-xs sm:text-sm">
                     {{ name }}
                 </div>
                 <div class="absolute left-0 flex items-center gap-2">
@@ -10,7 +10,7 @@
                     <div class="w-3 h-3 rounded-full bg-yellow-500" />
                     <div class="w-3 h-3 rounded-full bg-green-500" />
                 </div>
-                <div class="absolute right-0 text-xs text-gray-500 font-bold uppercase">
+                <div class="absolute right-0 text-xs text-gray-400 font-bold uppercase">
                     {{ lang }}
                 </div>
             </div>
