@@ -120,7 +120,7 @@ class TermwindReleasedCommand extends Command
 
             <ul>
                 <li>You can learn more about, on <a href="https://github.com/nunomaduro/termwind" rel="noreferrer" target="_blank">GitHub</a>.</li>
-                <li>Follow us on Twitter: <a href="https://twitter.com/enunomaduro" rel="noreferrer" target="_blank">@nunomaduro</a>, <a href="https://twitter.com/xiCO2k" rel="noreferrer" target="_blank">@xiCO2k</a>.</li>
+                <li>Follow us on Twitter: <a href="https://twitter.com/enunomaduro" rel="noreferrer" target="_blank">@enunomaduro</a>, <a href="https://twitter.com/xiCO2k" rel="noreferrer" target="_blank">@xiCO2k</a>.</li>
             </ul>
 
             <p v-emoji class="text-gray-400 leading-6">
