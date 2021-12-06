@@ -11,6 +11,11 @@ class PostController extends Controller
 {
     public function __invoke(Post $post): Response
     {
+        $v = $post->views()->create([
+            'ip' => request()->ip(),
+            'agent' => request()->header('User-Agent'),
+        ]);
+
         return Inertia::render('Post', [
             'post' => $post,
         ]);

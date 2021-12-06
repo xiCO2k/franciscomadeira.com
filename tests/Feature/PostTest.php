@@ -26,3 +26,11 @@ it('retuns a 404 if the post is not active', function () {
 
     $response->assertNotFound();
 });
+
+it('add post views when the page is loaded', function () {
+    $post = Post::factory()->create();
+
+    $response = $this->get(route('post.detail', $post));
+
+    expect($post->views()->count())->toBe(1);
+});
