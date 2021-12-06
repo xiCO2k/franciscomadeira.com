@@ -6,7 +6,7 @@
         <meta property="og:description" :content="post.description">
         <meta name="twitter:description" :content="post.description">
         <meta property="og:type" content="article">
-        <meta property="og:url" :content="route('post', post)">
+        <meta property="og:url" :content="route('post', post.slug)">
         <meta property="og:image" :content="post.share_img">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@xico2k">
