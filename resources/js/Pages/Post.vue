@@ -17,7 +17,7 @@
             {{ post.title }}
         </h1>
 
-        <img src="../../img/termwind-released-hero.webp" class="w-full max-w-2xl mx-auto" alt="PEST Released!">
+        <img src="../../img/termwind-released-hero.webp" width="672" height="378" class="w-full max-w-2xl mx-auto" alt="Termwind Released!">
         <div>
             <p>Termwind allows you to build unique and beautiful PHP command-line applications, using the Tailwind CSS API with an HTML Renderer. In short, it's like Tailwind CSS, but for the PHP command-line applications.</p>
             <p>Termwind was created by <a href="https://twitter.com/xiCO2k" rel="noreferrer" target="_blank">Francisco Madeira</a> and <a href="https://twitter.com/enunomaduro" rel="noreferrer" target="_blank">Nuno Maduro</a>, and after almost three months of development <b>Termwind v1.0 is available</b>, and you can start using on your projects.</p>
@@ -29,7 +29,7 @@
             <p><b>This example</b> shows how easy it is to create a beautiful CLI output, with simple knowledge of <b>HTML</b> and <b>TailwindCSS</b>.</p>
 
             <picture class="block mt-6">
-                <img src="../../img/termwind-released.webp" class="w-full max-w-2xl mx-auto" alt="Termwind Released!">
+                <img src="../../img/termwind-released.webp" width="672" height="202" class="w-full max-w-2xl mx-auto" alt="Termwind Released!">
             </picture>
 
             <CodeSnippet lang="php" line-numbers>
@@ -54,7 +54,7 @@ HTML);` }}
             <p>For this example we will take advantage of the <b>Laravel Framework</b> <span class="code">Command</span> with a <span class="code">blade</span> view.</p>
 
             <picture class="block mt-6">
-                <img src="../../img/pest-example.webp" class="w-full max-w-2xl mx-auto" alt="PEST Example">
+                <img src="../../img/pest-example.webp" width="672" height="336" class="w-full max-w-2xl mx-auto" alt="PEST Example">
             </picture>
 
             <CodeSnippet
