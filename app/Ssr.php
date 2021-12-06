@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Support\Facades\Cache;
+use Symfony\Component\Process\Exception\ProcessTimedOutException;
+use Symfony\Component\Process\Process;
 
 final class Ssr
 {
@@ -27,7 +29,7 @@ final class Ssr
 
         $data = Cache::get($key);
 
-        if (! $data) {
+        if (! $data || $data === []) {
             Cache::add($key, $data = $this->exec($page));
         }
 
@@ -53,11 +55,18 @@ final class Ssr
             return [];
         }
 
-        $output = exec(sprintf(
+        $process = Process::fromShellCommandline(sprintf(
             "node %s '%s'", public_path('js/ssr.js'),
             str_replace("'", "\\u0027", (string) json_encode($page))
-        ));
+        ))->setTimeout(1);
 
+        try {
+            $process->run();
+        } catch (ProcessTimedOutException $e) {
+            // .
+        }
+
+        $output = $process->getOutput();
         return json_decode($output !== "" && $output !== false ? $output : '[]' , true);
     }
 }
