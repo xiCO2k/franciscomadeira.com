@@ -5,6 +5,8 @@
             <img
                 src="/og-square.jpg"
                 class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
+                width="192"
+                height="192"
                 alt="Francisco Madeira"
             >
         </picture>
