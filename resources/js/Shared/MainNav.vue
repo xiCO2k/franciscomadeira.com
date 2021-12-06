@@ -13,7 +13,7 @@
             rel="noreferrer"
             class="border-b-2 border-transparent hover:border-blue-300 hover:text-gray-100"
         >
-            Github
+            GitHub
         </a>
         <a
             href="https://twitter.com/xico2k"
