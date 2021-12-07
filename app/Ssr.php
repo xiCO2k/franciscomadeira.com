@@ -11,7 +11,7 @@ final class Ssr
     /**
      * Registers this class as a singleton from the app.
      */
-    public static function register()
+    public static function register(): void
     {
         app()->singleton(self::class, fn () => new static());
     }
@@ -27,9 +27,9 @@ final class Ssr
     {
         $key = $page['url'] . $page['version'];
 
-        $data = Cache::get($key);
+        $data = Cache::get($key, []);
 
-        if (! $data || $data === []) {
+        if ($data === []) {
             Cache::add($key, $data = $this->exec($page));
         }
 

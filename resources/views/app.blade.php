@@ -12,32 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Francisco Madeira",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "{{ asset('og-square.jpg') }}",
-                    "width": 500,
-                    "height": 500
-                }
-            },
-            "url": "https://franciscomadeira.com",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://franciscomadeira.com"
-            },
-            "description": "I'm Francisco Madeira - a Software Developer"
-        }
-    </script>
     <script src="{{ mix('/js/manifest.js') }}" defer></script>
     <script src="{{ mix('/js/vendor.js') }}" defer></script>
     <script src="{{ mix('/js/app.js') }}" defer></script>
-
+    {!! optional($schema ?? [])->toScript() !!}
     @routes
 </head>
 <body>
