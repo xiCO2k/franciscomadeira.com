@@ -6,6 +6,7 @@ use App\Models\Post;
 use Inertia\Inertia;
 use Inertia\Response;
 use Spatie\SchemaOrg\Schema;
+use Spatie\SchemaOrg\WebSite;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,7 @@ class HomeController extends Controller
         ])->withViewData('schema', $this->getSchema());
     }
 
-    private function getSchema()
+    private function getSchema(): WebSite
     {
         return Schema::webSite()
             ->url(route('home'))
@@ -25,9 +26,9 @@ class HomeController extends Controller
             ->publisher(Schema::organization()
                 ->name('Francisco Madeira')
                 ->logo(Schema::imageObject()
-                    ->url('http://franciscomadeira.com.test/og-square.jpg')
-                    ->width(500)
-                    ->height(500)
+                    ->url('https://franciscomadeira.com.test/og-square.jpg')
+                    ->width(Schema::quantitativeValue()->value(500))
+                    ->height(Schema::quantitativeValue()->value(500))
                 )
             );
     }

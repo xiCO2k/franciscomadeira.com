@@ -10,6 +10,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    public $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
     protected static function booted(): void
     {
         static::addGlobalScope(fn ($builder) => $builder->where('is_active', true));
