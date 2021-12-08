@@ -14,7 +14,7 @@ class AddIsHiddenToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('is_hidden')->defaults(false)->after('is_active');
+            $table->boolean('is_hidden')->default(false)->after('is_active');
         });
     }
 
