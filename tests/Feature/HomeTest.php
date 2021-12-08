@@ -20,3 +20,11 @@ it('shows all the posts', function () {
             ->etc()
         ));
 });
+
+it('does not show the hidden posts', function () {
+    $post = Post::factory()->create([ 'is_hidden' => true ]);
+
+    $response = $this->get(route('home'));
+
+    $response->assertInertia(fn ($page) => $page->has('posts', 0));
+});

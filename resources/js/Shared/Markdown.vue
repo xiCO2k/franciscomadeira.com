@@ -1,56 +1,92 @@
-<template>
-    <template
-        v-for="(line, index) in data"
-        :key="index"
-    >
-        <p v-if="line.tag === 'p'">
-            <template
-                v-for="(child, childIndex) in line.children"
-                :key="`p-${childIndex}`"
-            />
-        </p>
-    </template>
-</template>
-
-<script setup>
-import { useSlots } from 'vue'
+<script>
+import { useSlots, h, withDirectives, resolveDirective } from 'vue'
 import MarkdownIt from 'markdown-it'
 import CodeSnippet from './CodeSnippet'
-import { Shiki } from '@/shiki'
 
-const slots = useSlots();
-const md = MarkdownIt();
+export default {
+    setup() {
+        const slots = useSlots();
+        const md = MarkdownIt({ html: true });
 
-const html = md.parse(
-    slots.default().map(element => element.children).join(''),
-);
+        const html = md.parse(
+            slots.default().map(element => element.children).join(''),
+            {},
+        );
 
-const getData = (tokens) => {
-    const arr = [];
-    let openTag = {};
+        const parseTokens = (tokens) => {
+            let tagOpen = {};
+            let data = [];
 
-    tokens.forEach((token) => {
-        if (token.type.endsWith('_open')) {
-            openTag = token;
+            tokens.forEach(token => {
+                if (! tagOpen.open && token.type.endsWith('_open')) {
+                    tagOpen = {
+                        open: token,
+                        close: null,
+                        children: [],
+                    };
+                } else if (tagOpen?.open?.tag === token.tag && token.type.endsWith('_close')) {
+                    tagOpen.close = token;
+                    tagOpen.children = parseTokens(tagOpen.children || []);
+                    data.push({ ...tagOpen });
+                    tagOpen = {};
+                } else if (tagOpen.open) {
+                    tagOpen.children.push(token);
+                } else {
+                    data.push({
+                        open: token,
+                        children: parseTokens(token.children || []),
+                    });
+                }
+            });
+
+            return data;
         }
 
-        if (token.type === 'inline' || token.type === 'text') {
-            openTag.children.push(token.children ? getData(token.children) : token.content);
+        const getOutput = (data) => {
+            const attrs = (arr) => {
+                const args = {};
+                arr.forEach(([key, value]) => args[key] = value);
+                return args;
+            }
+
+            return data.map(({ open, children }) => {
+                if (open.tag === 'img') {
+                    return h(open.tag, attrs(open.attrs));
+                }
+
+                const content = children?.length ? getOutput(children) : open.content;
+
+                if (open.tag === 'a') {
+                    return h(open.tag, {
+                        ...attrs(open.attrs),
+                        rel: 'noreferrer',
+                        target: '_blank',
+                    }, content);
+                }
+
+                if (open.tag === 'p') {
+                    return withDirectives(
+                        h(open.tag, content),
+                        [[resolveDirective('emoji')]]
+                    );
+                }
+
+                if (open.type === 'fence' && open.tag === 'code') {
+                    return h(CodeSnippet, {
+                        lang: open.info.split(',')[0],
+                        name: open.info.split(',')[1],
+                        lineNumbers: true,
+                    }, () => open.content);
+                }
+
+                return open.tag
+                    ? h(open.tag, content)
+                    : content;
+            });
         }
 
-        if (openTag.type && token.type === openTag.type.replace('_open', '_close')) {
-            arr.push(openTag);
-        }
-
-        if (token.type === 'fence') {
-            arr.push(token);
-        }
-    });
-
-    return arr;
+        return () => getOutput(parseTokens(html))
+    },
 }
 
-const data = getData(html);
-
-console.log(data)
 </script>

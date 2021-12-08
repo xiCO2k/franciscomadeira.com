@@ -1,6 +1,10 @@
 article.article {
     @apply mt-4 px-6 sm:px-8 max-w-4xl mx-auto;
 
+    & img:not(.emoji) {
+        @apply w-full max-w-2xl mx-auto;
+    }
+
     & h1 {
         @apply text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-8;
     }
@@ -23,13 +27,21 @@ article.article {
         & a {
             @apply text-gray-200 hover:text-white border-b-2 border-blue-300;
         }
+
+        & p {
+            @apply inline;
+        }
     }
 
-    & .code {
+    & .code, & code {
         @apply py-1 px-2 bg-gray-700 rounded;
     }
 
     & .code-snippet {
         @apply mt-8;
+    }
+
+    & blockquote p {
+        font-size: 0.85em;
     }
 }

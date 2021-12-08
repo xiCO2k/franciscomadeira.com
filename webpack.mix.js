@@ -15,8 +15,8 @@ mix
     .sourceMaps()
     .webpackConfig({
         stats: {
-             children: true
-        }
+            children: true,
+        },
     });
 
 if (isHot) {

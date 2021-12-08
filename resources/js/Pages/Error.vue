@@ -1,6 +1,10 @@
 <template>
-    <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mt-8 mb-8">{{ title }}</h1>
-    <div class="text-center">{{ description }}</div>
+    <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mt-8 mb-8">
+        {{ title }}
+    </h1>
+    <div class="text-center">
+        {{ description }}
+    </div>
 </template>
 
 <script setup>
@@ -10,7 +14,7 @@ const title = {
     500: '500: Server Error',
     404: '404: Page Not Found',
     403: '403: Forbidden',
-  }[props.status];
+}[props.status];
 
 const description = {
     503: 'Sorry, we are doing some maintenance. Please check back soon.',

@@ -56,7 +56,7 @@ watch(highlighter.loaded, () => setCode());
 
 const setCode = () => {
     lines.value = highlighter.getLines(
-        slots.default().map(element => element.children).join(''),
+        slots.default().map(element => element.children).join('').replace(/\n$/, ''),
         props.lang,
     );
 }
