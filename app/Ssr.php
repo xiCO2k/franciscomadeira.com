@@ -25,7 +25,7 @@ final class Ssr
      */
     public function get(array $page, string $item = null): array|string
     {
-        $key = $page['url'] . $page['version'];
+        $key = md5(json_encode($page));
 
         $data = Cache::get($key, []);
 
