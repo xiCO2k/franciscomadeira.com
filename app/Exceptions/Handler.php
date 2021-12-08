@@ -15,6 +15,7 @@ class Handler extends ExceptionHandler
         /** @var \Illuminate\Http\Response $response */
         $response = parent::render($request, $e);
 
+        // @codeCoverageIgnoreStart
         if (! app()->environment(['local', 'testing']) &&
             in_array($response->status(), [500, 503, 404, 403])) {
             return Inertia::render('Error', ['status' => $response->status()])
@@ -25,6 +26,7 @@ class Handler extends ExceptionHandler
                 'message' => 'The page expired, please try again.',
             ]);
         }
+        // @codeCoverageIgnoreEnd
 
         return $response;
     }
