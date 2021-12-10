@@ -23,14 +23,17 @@ final class Ssr
      *
      * @return string|array<string, mixed>
      */
-    public function get(array $page, string $item = null): array|string
+    public function get(array $page, string $item = null, $cachable = true): array|string
     {
         $key = md5((string) json_encode($page));
+        $data = [];
 
-        $data = Cache::get($key, []);
+        if ($cachable) {
+            $data = Cache::get($key, []);
 
-        if ($data === []) {
-            Cache::add($key, $data = $this->exec($page));
+            if ($data === []) {
+                Cache::add($key, $data = $this->exec($page));
+            }
         }
 
         if ($item) {
