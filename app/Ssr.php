@@ -23,7 +23,7 @@ final class Ssr
      *
      * @return string|array<string, mixed>
      */
-    public function get(array $page, string $item = null, $cachable = true): array|string
+    public function get(array $page, string $item = null, bool $cachable = true): array|string
     {
         $key = md5((string) json_encode($page));
         $data = [];
