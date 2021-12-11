@@ -17,18 +17,18 @@
         "lint": "eslint --ext .js,.vue ."
     },
     "devDependencies": {
-        "@vue/compiler-sfc": "^3.2.23",
-        "@vue/server-renderer": "^3.2.23",
+        "@vue/compiler-sfc": "^3.2.24",
+        "@vue/server-renderer": "^3.2.24",
         "axios": "^0.24",
-        "eslint": "^8.3.0",
-        "eslint-plugin-vue": "^8.1.1",
+        "eslint": "^8.4.1",
+        "eslint-plugin-vue": "^8.2.0",
         "laravel-mix": "^6.0.39",
         "lodash": "^4.17.21",
         "patch-vue-directive-ssr": "^0.0.1",
         "postcss": "^8.4.4",
         "postcss-import": "^14.0.2",
         "postcss-nesting": "^10.0.2",
-        "tailwindcss": "next",
+        "tailwindcss": "^3.0.1",
         "vue-loader": "^16.8.3",
         "webpack-node-externals": "^3.0.0"
     },
@@ -37,8 +37,8 @@
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-vue3": "^0.5.2",
         "@inertiajs/progress": "^0.2.6",
-        "markdown-it": "^12.2.0",
-        "shiki": "^0.9.13",
+        "markdown-it": "^12.3.0",
+        "shiki": "^0.9.15",
         "twemoji": "^13.1.0",
         "vue": "^3.2.23"
     }

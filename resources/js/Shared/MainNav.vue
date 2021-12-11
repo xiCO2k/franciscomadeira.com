@@ -2,8 +2,8 @@
     <nav class="flex space-x-4 sm:space-x-8 text-gray-400 text-sm sm:text-base">
         <Link
             href="/about"
-            class="border-b-2 hover:border-blue-300 hover:text-gray-100"
-            :class="isUrl('about') ? 'border-blue-300 text-gray-100' : 'border-transparent'"
+            class="link-underline hover:text-gray-100"
+            :class="isUrl('about') ? 'active text-gray-100' : ''"
         >
             About
         </Link>
@@ -11,7 +11,7 @@
             href="https://github.com/xico2k"
             target="_blank"
             rel="noreferrer"
-            class="border-b-2 border-transparent hover:border-blue-300 hover:text-gray-100"
+            class="link-underline hover:text-gray-100"
         >
             GitHub
         </a>
@@ -19,7 +19,7 @@
             href="https://twitter.com/xico2k"
             target="_blank"
             rel="noreferrer"
-            class="border-b-2 border-transparent hover:border-blue-300 hover:text-gray-100"
+            class="link-underline hover:text-gray-100"
         >
             Twitter
         </a>

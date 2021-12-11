@@ -27,3 +27,11 @@ body {
 #app {
     @apply flex flex-col items-center justify-center min-w-full;
 }
+
+.link-underline {
+    @apply hover:underline hover:decoration-2 hover:underline-offset-4 hover:decoration-blue-300;
+
+    &.active {
+        @apply underline decoration-2 underline-offset-4 decoration-blue-300;
+    }
+}

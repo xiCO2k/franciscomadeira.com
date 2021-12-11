@@ -25,7 +25,7 @@ article.article {
         @apply text-opacity-80 text-white leading-6 text-xs sm:leading-8 sm:text-sm md:leading-9 md:text-base;
 
         & a {
-            @apply text-gray-200 hover:text-white border-b-2 border-blue-300;
+            @apply text-gray-200 hover:text-white underline decoration-2 underline-offset-4 decoration-blue-300;
         }
 
         & p {
