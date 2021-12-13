@@ -20,7 +20,8 @@ class Handler extends ExceptionHandler
             ]);
         }
 
-        if (! in_array($response->status(), [500, 503, 404, 403])) {
+        if (app()->environment(['local', 'testing']) ||
+            ! in_array($response->status(), [500, 503, 404, 403])) {
             return $response;
         }
 
