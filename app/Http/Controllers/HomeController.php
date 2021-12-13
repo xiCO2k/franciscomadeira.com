@@ -13,7 +13,14 @@ class HomeController extends Controller
     public function __invoke(): Response
     {
         return Inertia::render('Home', [
-            'posts' => Post::where('is_hidden', false)->get(),
+            'posts' => Post::where('is_hidden', false)
+                ->get()
+                ->map(fn ($post) => [
+                    'id' => $post->id,
+                    'slug' => $post->slug,
+                    'title' => $post->title,
+                    'description' => $post->description,
+                ]),
         ])->withViewData('schema', $this->getSchema());
     }
 

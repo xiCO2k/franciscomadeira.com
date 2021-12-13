@@ -11,7 +11,7 @@
                 {{ post.description }}
             </p>
             <div class="mt-4 text-xs leading-6 sm:text-base sm:leading-8">
-                <span>Read more</span>
+                <span class="link-underline">Read more</span>
             </div>
         </Link>
     </article>
