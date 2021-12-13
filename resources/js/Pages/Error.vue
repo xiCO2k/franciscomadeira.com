@@ -12,6 +12,7 @@
 
 <script setup>
 const props = defineProps({ status: Number });
+
 const title = {
     503: '503: Service Unavailable',
     500: '500: Server Error',
