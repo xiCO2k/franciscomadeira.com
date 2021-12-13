@@ -1,4 +1,5 @@
 <template>
+    <Head :title="title" />
     <h1 class="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold text-center mt-8 mb-8">
         {{ title }}
     </h1>
