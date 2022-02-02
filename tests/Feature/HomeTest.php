@@ -9,14 +9,15 @@ it('opens the page', function () {
 });
 
 it('shows all the posts', function () {
-    $post = Post::factory()->create();
+    Post::factory()->create(['category' => 'notblog']);
+    $postBlog = Post::factory()->create();
 
     $response = $this->get(route('home'));
 
     $response->assertInertia(fn ($page) => $page
         ->component('Home')
         ->has('posts', 1, fn ($page) => $page
-            ->where('title', $post->title)
+            ->where('title', $postBlog->title)
             ->etc()
         ));
 });
