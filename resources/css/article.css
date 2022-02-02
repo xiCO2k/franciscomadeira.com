@@ -11,6 +11,10 @@ article.article {
 
     & h2 {
         @apply mt-16 font-bold text-lg lg:text-xl text-center;
+
+        &.subtitle {
+            @apply text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-center mb-8;
+        }
     }
 
     & p {

@@ -8,19 +8,19 @@ use Inertia\Response;
 use Spatie\SchemaOrg\Schema;
 use Spatie\SchemaOrg\WebSite;
 
-class HomeController extends Controller
+class GivenTalksController extends Controller
 {
     public function __invoke(): Response
     {
-        return Inertia::render('Home', [
+        return Inertia::render('GivenTalks', [
             'posts' => Post::where('is_hidden', false)
-                ->where('category', 'blog')
+                ->where('category', 'given-talks')
                 ->get()
                 ->map(fn ($post) => [
                     'id' => $post->id,
                     'slug' => $post->slug,
                     'title' => $post->title,
-                    'description' => $post->description,
+                    'text' => $post->text,
                 ]),
         ])->withViewData('schema', $this->getSchema());
     }
@@ -28,9 +28,9 @@ class HomeController extends Controller
     private function getSchema(): WebSite
     {
         return Schema::webSite()
-            ->url(route('home'))
-            ->mainEntityOfPage(Schema::webPage()->identifier(route('home')))
-            ->description("I'm Francisco Madeira - a Software Developer")
+            ->url(route('given-talks'))
+            ->mainEntityOfPage(Schema::webPage()->identifier(route('given-talks')))
+            ->description('All my given talks available online.')
             ->publisher(Schema::organization()
                 ->name('Francisco Madeira')
                 ->logo(Schema::imageObject()

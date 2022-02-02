@@ -1,6 +1,13 @@
 <template>
     <nav class="flex space-x-4 sm:space-x-8 text-gray-400 text-sm sm:text-base">
         <Link
+            href="/given-talks"
+            class="link-underline hover:text-gray-100"
+            :class="isUrl('given-talks') ? 'active text-gray-100' : ''"
+        >
+            Given Talks
+        </Link>
+        <Link
             href="/about"
             class="link-underline hover:text-gray-100"
             :class="isUrl('about') ? 'active text-gray-100' : ''"

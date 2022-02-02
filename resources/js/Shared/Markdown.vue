@@ -79,6 +79,13 @@ export default {
                     }, () => open.content);
                 }
 
+                if (open.type === 'html_block') {
+                    return h('div', {
+                        innerHTML: open.content,
+                        class: 'mt-8 overflow-hidden w-full aspect-w-16 aspect-h-9'
+                    });
+                }
+
                 return open.tag
                     ? h(open.tag, content)
                     : content;
