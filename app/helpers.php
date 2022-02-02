@@ -2,7 +2,7 @@
 
 use App\Ssr;
 
-if (! function_exists('ssr')) {
+if (!function_exists('ssr')) {
     /**
      * Gets the static version for the page.
      *

@@ -37,7 +37,7 @@ final class Ssr
         }
 
         if ($item) {
-            if (! array_key_exists($item, $data)) {
+            if (!array_key_exists($item, $data)) {
                 return '';
             }
 
@@ -54,13 +54,13 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        if (! file_exists(public_path('js/ssr.js'))) {
+        if (!file_exists(public_path('js/ssr.js'))) {
             return [];
         }
 
         $process = Process::fromShellCommandline(sprintf(
             "node %s '%s'", public_path('js/ssr.js'),
-            str_replace("'", "\\u0027", (string) json_encode($page))
+            str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
 
         try {
@@ -70,6 +70,7 @@ final class Ssr
         }
 
         $output = $process->getOutput();
-        return json_decode($output !== "" && $output !== false ? $output : '[]' , true);
+
+        return json_decode($output !== '' && $output !== false ? $output : '[]', true);
     }
 }

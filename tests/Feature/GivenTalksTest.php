@@ -9,13 +9,12 @@ it('opens the page', function () {
 
 it('shows only the given-talks posts', function () {
     Post::factory(2)->create([
-        'category' => 'given-talks'
+        'category' => 'given-talks',
     ]);
     Post::factory()->create();
 
     $response = $this->get(route('given-talks'));
 
-    $response->assertInertia(fn ($page) =>
-        $page->has('posts', 2)
+    $response->assertInertia(fn ($page) => $page->has('posts', 2)
     );
 });

@@ -23,7 +23,7 @@ it('shows all the posts', function () {
 });
 
 it('does not show the hidden posts', function () {
-    $post = Post::factory()->create([ 'is_hidden' => true ]);
+    $post = Post::factory()->create(['is_hidden' => true]);
 
     $response = $this->get(route('home'));
 
