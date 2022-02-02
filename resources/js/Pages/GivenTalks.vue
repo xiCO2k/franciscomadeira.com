@@ -12,7 +12,7 @@
         <meta name="twitter:description" content="All my given talks available online.">
         <meta name="description" content="All my given talks available online.">
     </Head>
-    <h1 class="text-center text-3xl sm:text-6xl font-bold tracking-tight">Given Talks</h1>
+    <h1 class="mt-6 text-center text-3xl sm:text-6xl font-bold tracking-tight">Given Talks</h1>
 
     <article
         class="article"

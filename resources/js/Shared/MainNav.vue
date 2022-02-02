@@ -5,7 +5,7 @@
             class="link-underline hover:text-gray-100"
             :class="isUrl('given-talks') ? 'active text-gray-100' : ''"
         >
-            Given Talks
+            <span class="hidden sm:inline">Given</span> Talks
         </Link>
         <Link
             href="/about"
