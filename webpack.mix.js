@@ -14,6 +14,9 @@ mix
     .disableNotifications()
     .sourceMaps()
     .webpackConfig({
+        output: {
+            chunkFilename: 'js/[name].js?id=[chunkhash]',
+        },
         stats: {
             children: true,
         },

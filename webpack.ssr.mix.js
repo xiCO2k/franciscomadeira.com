@@ -3,17 +3,17 @@ const webpackNodeExternals = require('webpack-node-externals')
 
 mix
     .js('resources/js/ssr.js', 'public/js')
-    .vue(3)
+    .vue({ version: 3, options: { optimizeSSR: true }})
     .alias({
         '@': 'resources/js',
         'ziggy': 'vendor/tightenco/ziggy/dist/index',
     })
-    .postCss('resources/css/app.css', 'public/css')
     .disableNotifications()
     .webpackConfig({
         target: 'node',
         externals: [webpackNodeExternals()],
     })
     .options({
+        manifest: false,
         legacyNodePolyfills: false,
     });
