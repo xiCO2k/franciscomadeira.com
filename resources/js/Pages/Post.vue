@@ -18,7 +18,7 @@
     </article>
 </template>
 <script setup>
-import Markdown from '@/Shared/Markdown'
+import Markdown from '@/js/Shared/Markdown.vue'
 
 defineProps({ post: Object })
 </script>

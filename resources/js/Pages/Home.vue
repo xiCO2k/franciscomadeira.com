@@ -25,8 +25,8 @@
     </section>
 </template>
 <script setup>
-import HomeHeader from '@/Shared/HomeHeader'
-import PostCard from '@/Shared/PostCard'
+import HomeHeader from '@/js/Shared/HomeHeader.vue'
+import PostCard from '@/js/Shared/PostCard.vue'
 
 defineProps({
     posts: Object,

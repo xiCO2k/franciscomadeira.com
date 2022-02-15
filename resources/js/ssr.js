@@ -1,7 +1,7 @@
 import { createSSRApp, h } from 'vue'
 import { renderToString } from '@vue/server-renderer'
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
-import MainLayout from './Shared/MainLayout'
+import MainLayout from './Shared/MainLayout.vue'
 import route from 'ziggy';
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
@@ -12,7 +12,8 @@ createInertiaApp({
     page,
     render: renderToString,
     resolve: name => {
-        const { default: page } = require(`./Pages/${name}`);
+        const pages = import.meta.globEager('./Pages/**/*.vue');
+        const page = pages[`./Pages/${name}.vue`].default;
 
         if (page.layout === undefined) {
             page.layout = MainLayout;

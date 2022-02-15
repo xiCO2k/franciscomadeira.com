@@ -54,18 +54,19 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        if (!file_exists(public_path('js/ssr.js'))) {
+        if (!file_exists(public_path('dist/ssr.js'))) {
             return [];
         }
 
         $process = Process::fromShellCommandline(sprintf(
-            "node %s '%s'", public_path('js/ssr.js'),
+            "node %s '%s'", public_path('dist/ssr.js'),
             str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
 
         try {
             $process->run();
         } catch (ProcessTimedOutException $e) {
+
             // .
         }
 

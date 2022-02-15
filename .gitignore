@@ -3,6 +3,7 @@
 /public/js
 /public/images
 /public/hot
+/public/dist
 /public/storage
 /public/mix-manifest.json
 /storage/*.key

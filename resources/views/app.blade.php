@@ -7,14 +7,20 @@
     {!! ssr($page, 'head') !!}
     <meta name="theme-color" content="#111827">
     <link rel="icon" type="image/png" href="{{ asset('/favicon.png') }}" />
-    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script src="{{ mix('/js/manifest.js') }}" defer></script>
-    <script src="{{ mix('/js/vendor.js') }}" defer></script>
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+
+    @vitedev
+        <script type="module" src="http://localhost:3000/@vite/client"></script>
+        <script type="module" src="http://localhost:3000/resources/js/app.js"></script>
+        <script type="module" src="http://localhost:3000/resources/css/app.css"></script>
+    @else
+        <link rel="stylesheet" href="{{ vite('app.css') }}">
+        <script type="module" src="{{ vite('app.js') }}" defer></script>
+    @endvitedev
+
     {!! optional($schema ?? [])->toScript() !!}
     @routes
 </head>

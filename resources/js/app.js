@@ -1,16 +1,17 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
-import MainLayout from '@/Shared/MainLayout'
-import { ZiggyVue } from 'ziggy'
+import MainLayout from './Shared/MainLayout.vue'
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
+import { ZiggyVue } from 'ziggy'
 
 InertiaProgress.init()
 
 createInertiaApp({
     resolve: async name => {
-        const { default: page } = await import(`./Pages/${name}`);
+        const pages = import.meta.glob('./Pages/**/*.vue');
+        const { default: page } = await pages[`./Pages/${name}.vue`]();
 
         if (page.layout === undefined) {
             page.layout = MainLayout;
@@ -33,8 +34,8 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
-            .use(ZiggyVue)
             .use(Shiki)
+            .use(ZiggyVue)
             .component('Link', Link)
             .component('Head', Head)
             .directive('emoji', { mounted(el) {

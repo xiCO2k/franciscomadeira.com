@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
-import Markdown from '@/Shared/Markdown'
-import HomeHeader from '@/Shared/HomeHeader'
-import PostCard from '@/Shared/PostCard'
+import Markdown from '@/js/Shared/Markdown.vue'
+import HomeHeader from '@/js/Shared/HomeHeader.vue'
+import PostCard from '@/js/Shared/PostCard.vue'
 
 defineProps({
     posts: Object,
