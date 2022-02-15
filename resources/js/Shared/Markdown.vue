@@ -1,7 +1,7 @@
 <script>
 import { useSlots, h, withDirectives, resolveDirective } from 'vue'
 import MarkdownIt from 'markdown-it'
-import CodeSnippet from './CodeSnippet'
+import CodeSnippet from './CodeSnippet.vue'
 
 export default {
     setup() {

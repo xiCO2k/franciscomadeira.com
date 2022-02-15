@@ -5,9 +5,9 @@
             class="flex mb-4 sm:mb-0 items-center text-gray-400 hover:text-white"
         >
             <picture>
-                <source type="image/webp" srcset="/og-square.webp">
+                <source type="image/webp" srcset="../../img/square.webp">
                 <img
-                    src="/og-square.jpg"
+                    src="../../img/square.jpg"
                     class="w-14 h-14 sm:w-20 sm:h-20 border-4 sm:border-4 border-gray-800 rounded-full"
                     width="80"
                     height="80"
@@ -23,5 +23,5 @@
 </template>
 
 <script setup>
-import MainNav from './MainNav'
+import MainNav from './MainNav.vue'
 </script>

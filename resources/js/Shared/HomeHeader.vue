@@ -1,9 +1,9 @@
 <template>
     <header class="flex flex-col items-center pt-8 sm:pt-2 px-4">
         <picture>
-            <source type="image/webp" srcset="/og-square.webp">
+            <source type="image/webp" srcset="../../img/square.webp">
             <img
-                src="/og-square.jpg"
+                src="../../img/square.jpg"
                 class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
                 width="192"
                 height="192"
@@ -30,5 +30,5 @@
 </template>
 
 <script setup>
-import MainNav from './MainNav'
+import MainNav from './MainNav.vue'
 </script>

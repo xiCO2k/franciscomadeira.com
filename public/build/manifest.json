@@ -1,0 +1,64 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.aab51f10.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor.433855f7.js"
+    ],
+    "dynamicImports": [
+      "resources/js/Pages/Error.vue",
+      "resources/js/Pages/GivenTalks.vue",
+      "resources/js/Pages/Home.vue",
+      "resources/js/Pages/Post.vue"
+    ],
+    "assets": [
+      "assets/square.a8c8ad4a.webp",
+      "assets/square.a9e01c78.jpg"
+    ]
+  },
+  "_vendor.433855f7.js": {
+    "file": "assets/vendor.433855f7.js"
+  },
+  "resources/js/Pages/Error.vue": {
+    "file": "assets/Error.b9db8a04.js",
+    "src": "resources/js/Pages/Error.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.433855f7.js"
+    ]
+  },
+  "resources/js/Pages/GivenTalks.vue": {
+    "file": "assets/GivenTalks.d85497ec.js",
+    "src": "resources/js/Pages/GivenTalks.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Markdown.d4b56121.js",
+      "_vendor.433855f7.js"
+    ]
+  },
+  "_Markdown.d4b56121.js": {
+    "file": "assets/Markdown.d4b56121.js",
+    "imports": [
+      "_vendor.433855f7.js"
+    ]
+  },
+  "resources/js/Pages/Home.vue": {
+    "file": "assets/Home.5fb1662e.js",
+    "src": "resources/js/Pages/Home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_vendor.433855f7.js"
+    ]
+  },
+  "resources/js/Pages/Post.vue": {
+    "file": "assets/Post.6edb6a03.js",
+    "src": "resources/js/Pages/Post.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Markdown.d4b56121.js",
+      "_vendor.433855f7.js"
+    ]
+  }
+}
