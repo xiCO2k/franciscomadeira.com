@@ -7,7 +7,9 @@
         {{ description }}
     </div>
     <div class="mt-8 text-center">
-        <Link :href="route('home')" class="link-underline">&larr; Go Back</Link>
+        <Link :href="route('home')" class="link-underline">
+            &larr; Go Back
+        </Link>
     </div>
 </template>
 

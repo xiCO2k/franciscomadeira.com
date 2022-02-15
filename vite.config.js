@@ -1,7 +1,7 @@
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 
-const ssr = process.argv.includes("--ssr");
+const ssr = process.argv.includes('--ssr');
 
 export default ({ command }) => ({
     base: command === 'serve' ? '' : '/dist/',
@@ -26,7 +26,7 @@ export default ({ command }) => ({
     resolve: {
         alias: {
             '@': path.resolve('resources'),
-            'ziggy': path.resolve(ssr ? 'vendor/tightenco/ziggy/dist/index.m.js' : 'vendor/tightenco/ziggy/dist/vue.m.js')
-        }
+            'ziggy': path.resolve(ssr ? 'vendor/tightenco/ziggy/dist/index.m.js' : 'vendor/tightenco/ziggy/dist/vue.m.js'),
+        },
     },
 });

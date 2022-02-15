@@ -67,7 +67,7 @@ export default {
                 if (open.tag === 'p') {
                     return withDirectives(
                         h(open.tag, content),
-                        [[resolveDirective('emoji')]]
+                        [[resolveDirective('emoji')]],
                     );
                 }
 
@@ -82,7 +82,7 @@ export default {
                 if (open.type === 'html_block') {
                     return h('div', {
                         innerHTML: open.content,
-                        class: 'mt-6 overflow-hidden w-full aspect-w-16 aspect-h-9'
+                        class: 'mt-6 overflow-hidden w-full aspect-w-16 aspect-h-9',
                     });
                 }
 

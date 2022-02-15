@@ -12,22 +12,24 @@
         <meta name="twitter:description" content="All my given talks available online.">
         <meta name="description" content="All my given talks available online.">
     </Head>
-    <h1 class="mt-6 text-center text-3xl sm:text-6xl font-bold tracking-tight">Given Talks</h1>
+    <h1 class="mt-6 text-center text-3xl sm:text-6xl font-bold tracking-tight">
+        Given Talks
+    </h1>
 
     <article
-        class="article"
         v-for="post in posts"
         :key="post.id"
+        class="article"
     >
-        <h2 class="subtitle" v-emoji>{{ post.title }}</h2>
+        <h2 v-emoji class="subtitle">
+            {{ post.title }}
+        </h2>
         <Markdown>{{ post.text }}</Markdown>
     </article>
 </template>
 
 <script setup>
 import Markdown from '@/js/Shared/Markdown.vue'
-import HomeHeader from '@/js/Shared/HomeHeader.vue'
-import PostCard from '@/js/Shared/PostCard.vue'
 
 defineProps({
     posts: Object,

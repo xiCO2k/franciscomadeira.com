@@ -13,7 +13,9 @@
         <meta name="twitter:image" :content="post.share_img">
     </Head>
     <article class="article">
-        <h1 v-emoji>{{ post.title }}</h1>
+        <h1 v-emoji>
+            {{ post.title }}
+        </h1>
         <Markdown>{{ post.text }}</Markdown>
     </article>
 </template>
