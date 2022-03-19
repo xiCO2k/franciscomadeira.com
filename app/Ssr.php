@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 use Symfony\Component\Process\Process;
+use Tightenco\Ziggy\Ziggy;
 
 final class Ssr
 {
