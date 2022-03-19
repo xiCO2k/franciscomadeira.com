@@ -58,6 +58,8 @@ final class Ssr
             return [];
         }
 
+        $page['props']['ziggy'] = (new Ziggy)->toArray();
+
         $process = Process::fromShellCommandline(sprintf(
             "node %s '%s'", public_path('dist/ssr.js'),
             str_replace("'", '\\u0027', (string) json_encode($page))
