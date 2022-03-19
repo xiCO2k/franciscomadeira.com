@@ -1,7 +1,7 @@
 <template>
     <MainHeader />
     <div class="flex-1">
-        <div class="w-screen">
+        <div class="w-screen md:w-auto">
             <slot />
         </div>
     </div>
