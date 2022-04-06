@@ -17,7 +17,7 @@ export const highlighter = () => {
 
         loading.value = true;
 
-        const langs = ['html', 'php', {
+        const langs = ['html', 'php', 'js', 'json', 'vue', 'sh', {
             id: 'blade',
             scopeName: 'text.html.php.blade',
             path: (isServer ? '../../public/shiki/' : '') + 'languages/blade.tmLanguage.json',

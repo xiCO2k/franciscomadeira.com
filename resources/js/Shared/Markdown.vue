@@ -72,10 +72,10 @@ export default {
                 }
 
                 if (open.type === 'fence' && open.tag === 'code') {
+                    const [lang, name] = open.info.split(',');
                     return h(CodeSnippet, {
-                        lang: open.info.split(',')[0],
-                        name: open.info.split(',')[1],
-                        lineNumbers: true,
+                        lang, name,
+                        lineNumbers: lang === 'sh' ? false : true,
                     }, () => open.content);
                 }
 
