@@ -42,7 +42,7 @@ article.article {
     }
 
     & .code-snippet {
-        @apply mt-8;
+        @apply mt-6;
     }
 
     & blockquote p {
