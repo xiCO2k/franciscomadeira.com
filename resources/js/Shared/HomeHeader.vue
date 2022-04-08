@@ -1,5 +1,5 @@
 <template>
-    <header class="flex flex-col items-center pt-8 sm:pt-2 px-4">
+    <header class="flex flex-col items-center pt-4 sm:pt-8 px-4">
         <picture>
             <source type="image/webp" :srcset="squareWebp">
             <img
