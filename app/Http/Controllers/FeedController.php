@@ -24,7 +24,11 @@ class FeedController extends Controller
                 'title' => $post->title,
                 'link' => route('post.detail', $post),
                 'summary' => $post->description,
-                'content' => preg_replace("/(```\w+)(,[^\s]+)/", '$1', $post->text),
+                'content' => str_replace(
+                    ['```vue', '```blade'],
+                    ['```js', '```php'],
+                    preg_replace("/(```\w+)(,[^\s]+)/", '$1', $post->text)
+                ),
                 'updated' => $post->updated_at->format('c'),
             ]));
 
