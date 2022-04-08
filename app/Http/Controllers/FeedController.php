@@ -16,12 +16,16 @@ class FeedController extends Controller
             'feed' => route('feed'),
         ]);
 
-        Post::where('category', 'blog')->get()->each(fn ($post) => $feed->entry([
-            'title' => $post->title,
-            'link' => route('post.detail', $post),
-            'summary' => $post->description,
-            'content' => $post->text,
-        ]));
+        Post::where('is_hidden', false)
+            ->where('category', 'blog')
+            ->orderByDesc('created_at')
+            ->get()
+            ->each(fn ($post) => $feed->entry([
+                'title' => $post->title,
+                'link' => route('post.detail', $post),
+                'summary' => $post->description,
+                'content' => $post->text,
+            ]));
 
         return response($feed->asAtom())
             ->header('Content-Type', 'application/atom+xml');

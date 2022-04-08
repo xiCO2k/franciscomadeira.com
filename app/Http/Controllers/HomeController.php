@@ -15,6 +15,7 @@ class HomeController extends Controller
         return Inertia::render('Home', [
             'posts' => Post::where('is_hidden', false)
                 ->where('category', 'blog')
+                ->orderByDesc('created_at')
                 ->get()
                 ->map(fn ($post) => [
                     'id' => $post->id,
