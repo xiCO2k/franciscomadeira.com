@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Post;
+use Aschmelyun\BasicFeeds\Feed;
+
+class FeedController extends Controller
+{
+    public function __invoke()
+    {
+        $feed = Feed::create([
+            'link' => route('home'),
+            'authors' => 'Francisco Madeira',
+            'title' => 'Francisco Madeira Blog',
+            'feed' => route('feed'),
+        ]);
+
+        Post::where('category', 'blog')->get()->each(fn ($post) => $feed->entry([
+            'title' => $post->title,
+            'link' => route('post.detail', $post),
+            'summary' => $post->description,
+            'content' => $post->text,
+        ]));
+
+        return response($feed->asAtom())
+            ->header('Content-Type', 'application/atom+xml');
+    }
+}

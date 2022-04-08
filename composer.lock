@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43009afb38c33003818bb4c25401bf60",
+    "content-hash": "44b169aa065d95db0354f7a08acc1b26",
     "packages": [
+        {
+            "name": "aschmelyun/basic-feeds",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aschmelyun/basic-feeds.git",
+                "reference": "422b5dab219f9f2dd946decfc61f406308b21ba1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aschmelyun/basic-feeds/zipball/422b5dab219f9f2dd946decfc61f406308b21ba1",
+                "reference": "422b5dab219f9f2dd946decfc61f406308b21ba1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4|^8"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Aschmelyun\\BasicFeeds\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Schmelyun",
+                    "email": "me@aschmelyun.com"
+                }
+            ],
+            "description": "A simple PHP library to generate RSS and Atom feeds",
+            "homepage": "https://github.com/aschmelyun/basic-feeds",
+            "keywords": [
+                "atom",
+                "feeds",
+                "php",
+                "rss",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/aschmelyun/basic-feeds/issues",
+                "source": "https://github.com/aschmelyun/basic-feeds/tree/v1.0.0"
+            },
+            "time": "2022-04-02T05:39:31+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.1.1",
