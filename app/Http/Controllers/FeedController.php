@@ -33,6 +33,6 @@ class FeedController extends Controller
             ]));
 
         return response($feed->asAtom())
-            ->header('Content-Type', 'application/atom+xml');
+            ->header('Content-Type', 'application/xml;charset=UTF-8');
     }
 }
