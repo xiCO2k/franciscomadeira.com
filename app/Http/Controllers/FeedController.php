@@ -25,6 +25,7 @@ class FeedController extends Controller
                 'link' => route('post.detail', $post),
                 'summary' => $post->description,
                 'content' => str()->markdown(preg_replace("/(```\w+)(,[^\s]+)/", '$1', $post->text)),
+                'updated' => $post->updated_at->format('c'),
             ]));
 
         return response($feed->asAtom())
