@@ -58,7 +58,9 @@ final class Ssr
             return [];
         }
 
-        $page['props']['ziggy'] = (new Ziggy)->toArray();
+        $page['props']['ziggy'] = array_merge((new Ziggy)->toArray(), [
+            'location' => request()->url(),
+        ]);
 
         $process = Process::fromShellCommandline(sprintf(
             "node %s '%s'", storage_path('ssr/ssr.js'),
