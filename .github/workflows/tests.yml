@@ -35,6 +35,10 @@ jobs:
         mkdir -p database
         touch database/database.sqlite
 
+
+    - name: Run Pint
+      run: vendor/bin/pint --test
+
     - name: Run tests
       env:
         DB_CONNECTION: sqlite
