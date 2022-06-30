@@ -55,14 +55,14 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        if (!file_exists(public_path('dist/ssr.js'))) {
+        if (!file_exists(storage_path('ssr/ssr.js'))) {
             return [];
         }
 
         $page['props']['ziggy'] = (new Ziggy)->toArray();
 
         $process = Process::fromShellCommandline(sprintf(
-            "node %s '%s'", public_path('dist/ssr.js'),
+            "node %s '%s'", storage_path('ssr/ssr.js'),
             str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
 

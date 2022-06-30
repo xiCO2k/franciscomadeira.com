@@ -1,31 +1,28 @@
 import path from 'path'
-import vue from '@vitejs/plugin-vue'
+import laravel from 'laravel-vite-plugin'
+import {defineConfig} from 'vite'
+import vue from '@vitejs/plugin-vue';
 
 const ssr = process.argv.includes('--ssr');
 
-export default ({ command }) => ({
-    base: command === 'serve' ? '' : '/dist/',
-    publicDir: false,
-    server: {
-        origin: 'http://localhost:3000',
-    },
-    plugins: [vue()],
-    build: {
-        ssrManifest: ssr,
-        manifest: ! ssr,
-        outDir: 'public/dist',
-        emptyOutDir: false,
-        ssr,
-        rollupOptions: {
-            input: ssr ? ['resources/js/ssr.js'] : [
-                'resources/js/app.js',
-                'resources/css/app.css',
-            ],
-        },
-    },
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: 'resources/js/app.js',
+            ssr: 'resources/js/ssr.js',
+        }),
+        vue({
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
+            },
+        }),
+    ],
     resolve: {
         alias: {
-            '@': path.resolve('resources'),
+            'img': '/resources/img',
             'ziggy': path.resolve(ssr ? 'vendor/tightenco/ziggy/dist/index.m.js' : 'vendor/tightenco/ziggy/dist/vue.m.js'),
         },
     },

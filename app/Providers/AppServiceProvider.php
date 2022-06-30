@@ -15,19 +15,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Ssr::register();
         Model::unguard();
-
-        Blade::if('vitedev', function () {
-            if (app()->environment('production')) {
-                return false;
-            }
-
-            try {
-                Http::get('http://localhost:3000');
-            } catch (ConnectionException $e) {
-                return false;
-            }
-
-            return true;
-        });
     }
 }

@@ -13,14 +13,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    @vitedev
-        <script type="module" src="http://localhost:3000/@vite/client"></script>
-        <script type="module" src="http://localhost:3000/resources/js/app.js"></script>
-        <script type="module" src="http://localhost:3000/resources/css/app.css"></script>
-    @else
-        <link rel="stylesheet" href="{{ vite('app.css') }}">
-        <script type="module" src="{{ vite('app.js') }}" defer></script>
-    @endvitedev
+    @vite('resources/js/app.js')
 
     {!! optional($schema ?? [])->toScript() !!}
     @routes

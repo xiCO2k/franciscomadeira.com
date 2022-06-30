@@ -1,9 +1,9 @@
 <template>
     <header class="flex flex-col items-center pt-4 sm:pt-8 px-4">
         <picture>
-            <source type="image/webp" :srcset="squareWebp">
+            <source type="image/webp" :srcset="squareImgWebp">
             <img
-                src="@/img/square.jpg"
+                :src="squareImg"
                 class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
                 width="192"
                 height="192"
@@ -30,6 +30,7 @@
 </template>
 
 <script setup>
+import squareImgWebp from 'img/square.webp';
+import squareImg from 'img/square.jpg';
 import MainNav from './MainNav.vue'
-import squareWebp from '@/img/square.webp';
 </script>

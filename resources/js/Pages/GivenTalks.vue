@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import Markdown from '@/js/Shared/Markdown.vue'
+import Markdown from '@/Shared/Markdown.vue'
 
 defineProps({
     posts: Object,

@@ -15,10 +15,3 @@ if (!function_exists('ssr')) {
         return app(Ssr::class)->get($page, $item);
     }
 }
-
-function vite(string $asset): string
-{
-    $path = glob(public_path('dist/assets/' . str_replace('.', '.*.', $asset)))[0] ?? '';
-
-    return str_replace(public_path(), '', $path);
-}

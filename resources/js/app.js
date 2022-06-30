@@ -1,6 +1,8 @@
+import '../css/app.css';
 import { createApp, h } from 'vue'
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import MainLayout from './Shared/MainLayout.vue'
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
@@ -10,8 +12,7 @@ InertiaProgress.init()
 
 createInertiaApp({
     resolve: async name => {
-        const pages = import.meta.glob('./Pages/**/*.vue');
-        const { default: page } = await pages[`./Pages/${name}.vue`]();
+        const page = await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'));
 
         if (page.layout === undefined) {
             page.layout = MainLayout;
