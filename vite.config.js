@@ -1,8 +1,6 @@
 import laravel from 'laravel-vite-plugin'
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue';
-
-const ssr = process.argv.includes('--ssr');
 
 export default defineConfig({
     plugins: [
