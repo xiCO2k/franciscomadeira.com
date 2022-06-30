@@ -12,7 +12,7 @@ InertiaProgress.init()
 
 createInertiaApp({
     resolve: async name => {
-        const page = await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'));
+        const page = (await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'))).default;
 
         if (page.layout === undefined) {
             page.layout = MainLayout;
