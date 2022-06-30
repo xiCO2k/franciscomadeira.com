@@ -20,8 +20,7 @@ final class Ssr
     /**
      * Gets the static version for the page.
      *
-     * @param array<string, mixed> $page
-     *
+     * @param  array<string, mixed>  $page
      * @return string|array<string, mixed>
      */
     public function get(array $page, string $item = null, bool $cachable = true): array|string
@@ -38,7 +37,7 @@ final class Ssr
         }
 
         if ($item) {
-            if (!array_key_exists($item, $data)) {
+            if (! array_key_exists($item, $data)) {
                 return '';
             }
 
@@ -55,7 +54,7 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        if (!file_exists(storage_path('ssr/ssr.js'))) {
+        if (! file_exists(storage_path('ssr/ssr.js'))) {
             return [];
         }
 
