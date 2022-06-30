@@ -1,4 +1,3 @@
-import path from 'path'
 import laravel from 'laravel-vite-plugin'
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue';
@@ -22,8 +21,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            'img': '/resources/img',
-            'ziggy': path.resolve(ssr ? 'vendor/tightenco/ziggy/dist/index.m.js' : 'vendor/tightenco/ziggy/dist/vue.m.js'),
+            img: '/resources/img',
+            ziggy: '/vendor/tightenco/ziggy/dist/vue.m',
         },
     },
 });

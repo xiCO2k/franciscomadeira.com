@@ -2,7 +2,7 @@ import { createSSRApp, h } from 'vue'
 import { renderToString } from '@vue/server-renderer'
 import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
 import MainLayout from './Shared/MainLayout.vue'
-import route from 'ziggy';
+import { ZiggyVue } from 'ziggy';
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
 
@@ -29,20 +29,14 @@ createInertiaApp({
         return createSSRApp({ render: () => h(app, props) })
             .use(plugin)
             .use(Shiki)
+            .use(ZiggyVue, {
+                ...page.props.ziggy,
+                location: new URL(page.props.ziggy.location),
+            })
             .component('Link', Link)
             .component('Head', Head)
             .directive('emoji', { beforeMount(el, binding) {
                 el.innerHTML = twemoji.parse(binding.value)
-            }})
-            .mixin({
-                methods: {
-                    route: (name, params, absolute) => {
-                        return route(name, params, absolute, {
-                            ...page.props.ziggy,
-                            location: new URL(page.props.ziggy.url),
-                        })
-                    },
-                },
-            });
+            }});
     },
 }).then((output) => console.log(JSON.stringify(output)));
