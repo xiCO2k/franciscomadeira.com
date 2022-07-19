@@ -54,7 +54,7 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        if (! file_exists(storage_path('ssr/ssr.js'))) {
+        if (! file_exists(base_path('bootstrap/ssr/ssr.js'))) {
             return [];
         }
 
@@ -63,7 +63,7 @@ final class Ssr
         ]);
 
         $process = Process::fromShellCommandline(sprintf(
-            "node %s '%s'", storage_path('ssr/ssr.js'),
+            "node %s '%s'", base_path('bootstrap/ssr/ssr.js'),
             str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
 

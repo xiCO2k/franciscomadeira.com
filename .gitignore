@@ -3,7 +3,7 @@
 /public/storage
 /public/build
 /storage/*.key
-/storage/ssr
+/bootstrap/ssr
 /vendor
 .env
 .env.backup
