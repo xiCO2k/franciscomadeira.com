@@ -54,7 +54,8 @@ final class Ssr
      */
     public function exec(array $page): array
     {
-        if (! file_exists(base_path('bootstrap/ssr/ssr.js'))) {
+        if (! file_exists(base_path('bootstrap/ssr/ssr.js')) &&
+            ! file_exists(base_path('bootstrap/ssr/ssr.mjs'))) {
             return [];
         }
 
@@ -62,8 +63,13 @@ final class Ssr
             'location' => request()->url(),
         ]);
 
+        $path = file_exists(base_path('bootstrap/ssr/ssr.js'))
+            ? base_path('bootstrap/ssr/ssr.js')
+            : base_path('bootstrap/ssr/ssr.mjs');
+
         $process = Process::fromShellCommandline(sprintf(
-            "node %s '%s'", base_path('bootstrap/ssr/ssr.js'),
+            "node %s '%s'",
+            $path,
             str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
 
