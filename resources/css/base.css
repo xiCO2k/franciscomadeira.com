@@ -1,6 +1,9 @@
 @font-face {
   font-family: 'MonoLisa';
-  src:  url('./fonts/MonoLisa-Regular.woff2') format('woff2');
+  src:
+    local('MonoLisa Regular'),
+    local('MonoLisa-Regular'),
+    url('./fonts/MonoLisa-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +11,10 @@
 
 @font-face {
   font-family: 'MonoLisa';
-  src:  url('./fonts/MonoLisa-Bold.woff2') format('woff2');
+  src:
+    local('MonoLisa Bold'),
+    local('MonoLisa-Bold'),
+    url('./fonts/MonoLisa-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
