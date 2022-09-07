@@ -76,7 +76,6 @@ final class Ssr
         try {
             $process->run();
         } catch (ProcessTimedOutException $e) {
-
             // .
         }
 
