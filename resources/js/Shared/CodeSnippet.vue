@@ -1,6 +1,6 @@
 <template>
     <div class="code-snippet w-full">
-        <div class="px-6 pt-4 pb-0 bg-black rounded-lg bg-opacity-60 w-full">
+        <div class="px-6 pt-4 pb-2 bg-black rounded-lg bg-opacity-60 w-full">
             <div class="flex justify-center items-center relative h-6">
                 <div v-if="name" class="hidden sm:block text-gray-400 text-xs sm:text-sm">
                     {{ name }}
@@ -14,7 +14,7 @@
                     {{ lang }}
                 </div>
             </div>
-            <div class="font-mono py-4 text-xs leading-6 sm:text-sm sm:leading-8 overflow-auto whitespace-pre">
+            <div class="font-mono py-4 text-xs leading-6 sm:text-sm sm:leading-8 overflow-auto whitespace-pre scrollbar:w-2 scrollbar:h-2 scrollbar-track:bg-transparent scrollbar-thumb:rounded scrollbar-thumb:bg-gray-900">
                 <span
                     v-for="(line, lineIndex) in lines"
                     :key="`line-${lineIndex}`"
