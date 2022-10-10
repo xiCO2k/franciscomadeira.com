@@ -18,7 +18,7 @@ article.article {
     }
 
     & h3 {
-        @apply mt-12;
+        @apply mt-8;
     }
 
     & p {
