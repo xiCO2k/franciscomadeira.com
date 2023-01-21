@@ -1,6 +1,6 @@
 import { createSSRApp, h } from 'vue'
 import { renderToString } from '@vue/server-renderer'
-import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
+import { createInertiaApp, Link, Head } from '@inertiajs/vue3'
 import MainLayout from './Shared/MainLayout.vue'
 import { ZiggyVue } from 'ziggy';
 import { Shiki } from './shiki'
@@ -25,8 +25,8 @@ createInertiaApp({
 
         return page;
     },
-    setup({ app, props, plugin }) {
-        return createSSRApp({ render: () => h(app, props) })
+    setup({ App, props, plugin }) {
+        return createSSRApp({ render: () => h(App, props) })
             .use(plugin)
             .use(Shiki)
             .use(ZiggyVue, {

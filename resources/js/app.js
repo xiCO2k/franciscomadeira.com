@@ -1,14 +1,11 @@
 import '../css/app.css';
 import { createApp, h } from 'vue'
-import { createInertiaApp, Link, Head } from '@inertiajs/inertia-vue3'
-import { InertiaProgress } from '@inertiajs/progress'
+import { createInertiaApp, Link, Head } from '@inertiajs/vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import MainLayout from './Shared/MainLayout.vue'
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
 import { ZiggyVue } from 'ziggy'
-
-InertiaProgress.init()
 
 createInertiaApp({
     resolve: async name => {
