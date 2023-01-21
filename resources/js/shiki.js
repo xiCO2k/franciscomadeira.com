@@ -10,6 +10,7 @@ export const highlighter = () => {
     const loading = ref(false);
     let highlighter;
 
+
     const install = async () => {
         if (highlighter || loading.value) {
             return;
