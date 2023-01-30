@@ -17,7 +17,7 @@
             Hello World! 👋
         </h1>
         <h2 class="mt-4 text-lg text-center sm:text-2xl tracking-tight">
-            I'm <b>Francisco Madeira</b><br class="sm:hidden"><span class="hidden sm:inline"> - </span>A Software Developer
+            I'm <b>Francisco Madeira</b><br class="sm:hidden"><span class="hidden sm:inline"> - </span> Developer
         </h2>
         <h3
             v-emoji
