@@ -9,7 +9,7 @@
         "aschmelyun/basic-feeds": "^1.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.6.9",
-        "laravel/framework": "10.0",
+        "laravel/framework": "^10.0",
         "laravel/tinker": "^2.7",
         "spatie/schema-org": "^3.8",
         "tightenco/ziggy": "^1.4"
@@ -20,7 +20,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.1",
-        "nunomaduro/larastan": "^2.0",
+        "larastan/larastan": "^2.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpunit/phpunit": "^10.0",

@@ -14,7 +14,7 @@ final class Ssr
      */
     public static function register(): void
     {
-        app()->singleton(self::class, fn () => new static());
+        app()->singleton(self::class, fn () => new self());
     }
 
     /**
@@ -23,7 +23,7 @@ final class Ssr
      * @param  array<string, mixed>  $page
      * @return string|array<string, mixed>
      */
-    public function get(array $page, string $item = null, bool $cachable = true): array|string
+    public function get(array $page, ?string $item = null, bool $cachable = true): array|string
     {
         $key = md5((string) json_encode($page));
         $data = [];

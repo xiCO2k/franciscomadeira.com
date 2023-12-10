@@ -9,7 +9,7 @@ if (! function_exists('ssr')) {
      * @param  array<string, mixed>  $page
      * @return string|array<string, mixed>
      */
-    function ssr(array $page, string $item = null): array|string
+    function ssr(array $page, ?string $item = null): array|string
     {
         return app(Ssr::class)->get($page, $item);
     }
