@@ -31,9 +31,7 @@ final class Ssr
         if ($cachable) {
             $data = Cache::get($key, []);
 
-            if ($data === []) {
-                Cache::add($key, $data = $this->exec($page));
-            }
+            Cache::add($key, $data = $this->exec($page));
         }
 
         if ($item) {
@@ -75,7 +73,7 @@ final class Ssr
 
         try {
             $process->run();
-        } catch (ProcessTimedOutException $e) {
+        } catch (ProcessTimedOutException) {
             // .
         }
 
