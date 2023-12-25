@@ -1,4 +1,6 @@
-module.exports = {
+import aspectRatio from '@tailwindcss/aspect-ratio';
+
+export default {
     content: [
         './resources/views/**/*.blade.php',
         './resources/js/**/*.js',
@@ -15,7 +17,7 @@ module.exports = {
         extend: {},
     },
     plugins: [
-        require('@tailwindcss/aspect-ratio'),
+        aspectRatio,
         ({ addVariant }) => {
             addVariant('scrollbar', '&::-webkit-scrollbar')
             addVariant('scrollbar-track', '&::-webkit-scrollbar-track')
