@@ -1,3 +1,16 @@
+<script setup>
+import HomeHeader from '@/Shared/HomeHeader.vue'
+import PostCard from '@/Shared/PostCard.vue'
+
+defineOptions({
+    layout: null,
+});
+
+defineProps({
+    posts: Object,
+})
+</script>
+
 <template>
     <Head title="Francisco Madeira">
         <meta property="og:title" content="Francisco Madeira">
@@ -24,12 +37,3 @@
         />
     </section>
 </template>
-<script setup>
-import HomeHeader from '@/Shared/HomeHeader.vue'
-import PostCard from '@/Shared/PostCard.vue'
-
-defineProps({
-    posts: Object,
-    layout: null,
-})
-</script>

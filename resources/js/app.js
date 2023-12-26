@@ -15,10 +15,6 @@ createInertiaApp({
             page.layout = MainLayout;
         }
 
-        if (page.props?.layout === null) {
-            page.layout = undefined;
-        }
-
         return page;
     },
     title: title => {
