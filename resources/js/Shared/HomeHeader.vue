@@ -1,3 +1,9 @@
+<script setup>
+import squareImgWebp from 'img/square.webp';
+import squareImg from 'img/square.jpg';
+import MainNav from './MainNav.vue'
+</script>
+
 <template>
     <header class="flex flex-col items-center pt-4 sm:pt-8 px-4">
         <picture>
@@ -28,9 +34,3 @@
         <MainNav class="mt-8" />
     </header>
 </template>
-
-<script setup>
-import squareImgWebp from 'img/square.webp';
-import squareImg from 'img/square.jpg';
-import MainNav from './MainNav.vue'
-</script>

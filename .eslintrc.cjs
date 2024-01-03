@@ -3,7 +3,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:vue/vue3-recommended',
     ],
-    ignorePatterns: ['node_modules/**/*', 'vendor/**/*', 'public/**/*'],
+    ignorePatterns: ['node_modules/**/*', 'vendor/**/*', 'public/**/*', 'bootstrap/**/*'],
     parserOptions: {
         ecmaVersion: 12,
         sourceType: 'module',

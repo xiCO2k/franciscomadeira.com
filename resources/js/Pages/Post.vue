@@ -1,3 +1,9 @@
+<script setup>
+import Markdown from '@/Shared/Markdown.vue'
+
+defineProps({ post: Object })
+</script>
+
 <template>
     <Head :title="post.title">
         <meta property="og:title" :content="post.title">
@@ -19,8 +25,3 @@
         <Markdown>{{ post.text }}</Markdown>
     </article>
 </template>
-<script setup>
-import Markdown from '@/Shared/Markdown.vue'
-
-defineProps({ post: Object })
-</script>

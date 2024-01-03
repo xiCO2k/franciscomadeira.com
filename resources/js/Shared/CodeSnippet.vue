@@ -1,3 +1,34 @@
+<script setup>
+import { ref, onMounted, useSlots, watch, inject } from 'vue';
+
+const props = defineProps({
+    lang: String,
+    name: String,
+    lineNumbers: Boolean,
+})
+
+const lines = ref('');
+const slots = useSlots();
+const highlighter = inject('highlighter');
+
+highlighter.install();
+onMounted(() => setCode());
+watch(highlighter.loaded, () => setCode());
+
+const setCode = () => {
+    lines.value = highlighter.getLines(
+        slots.default().map(element => element.children).join('').replace(/\n$/, ''),
+        props.lang,
+    );
+}
+
+const tokenFontStyle = ({ fontStyle }) => ({
+    2: 'font-bold',
+    1: 'italic',
+    4: 'underline',
+})[fontStyle];
+</script>
+
 <template>
     <div class="code-snippet w-full">
         <div class="px-6 pt-4 pb-2 bg-black rounded-lg bg-opacity-60 w-full">
@@ -37,33 +68,3 @@
         </div>
     </div>
 </template>
-<script setup>
-import { ref, onMounted, useSlots, watch, inject } from 'vue';
-
-const props = defineProps({
-    lang: String,
-    name: String,
-    lineNumbers: Boolean,
-})
-
-const lines = ref('');
-const slots = useSlots();
-const highlighter = inject('highlighter');
-
-highlighter.install();
-onMounted(() => setCode());
-watch(highlighter.loaded, () => setCode());
-
-const setCode = () => {
-    lines.value = highlighter.getLines(
-        slots.default().map(element => element.children).join('').replace(/\n$/, ''),
-        props.lang,
-    );
-}
-
-const tokenFontStyle = ({ fontStyle }) => ({
-    2: 'font-bold',
-    1: 'italic',
-    4: 'underline',
-})[fontStyle];
-</script>

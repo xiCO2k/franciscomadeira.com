@@ -1,3 +1,7 @@
+<script setup>
+defineProps({ post: Object })
+</script>
+
 <template>
     <article>
         <Link
@@ -16,7 +20,3 @@
         </Link>
     </article>
 </template>
-
-<script setup>
-defineProps({ post: Object })
-</script>
