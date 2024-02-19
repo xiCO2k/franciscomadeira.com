@@ -2,7 +2,7 @@ import { createSSRApp, h } from 'vue'
 import { renderToString } from '@vue/server-renderer'
 import { createInertiaApp, Link, Head } from '@inertiajs/vue3'
 import MainLayout from './Shared/MainLayout.vue'
-import { ZiggyVue } from 'ziggy';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
 
