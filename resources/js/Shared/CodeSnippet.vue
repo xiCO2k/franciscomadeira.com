@@ -7,11 +7,12 @@ const props = defineProps({
     lineNumbers: Boolean,
 })
 
-const lines = ref('');
+const lines = ref([]);
 const slots = useSlots();
 const highlighter = inject('highlighter');
 
 highlighter.install();
+
 onMounted(() => setCode());
 watch(highlighter.loaded, () => setCode());
 

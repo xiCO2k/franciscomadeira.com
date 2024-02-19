@@ -19,6 +19,7 @@ createInertiaApp({
     },
     title: title => {
         const defaultTitle = 'Francisco Madeira';
+
         if (! title || title === defaultTitle) {
             return defaultTitle;
         }

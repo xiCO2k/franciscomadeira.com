@@ -1,8 +1,7 @@
-import { getHighlighter, setCDN } from 'shiki';
+import { getHighlighter } from 'shiki';
 import { ref } from 'vue'
 
 const isServer = typeof window === 'undefined'
-setCDN('/shiki/')
 
 export const highlighter = () => {
     const theme = 'github-dark';
@@ -18,13 +17,8 @@ export const highlighter = () => {
 
         loading.value = true;
 
-        const langs = ['html', 'php', 'js', 'json', 'vue', 'sh', {
-            id: 'blade',
-            scopeName: 'text.html.php.blade',
-            path: (isServer ? '../../public/shiki/' : '') + 'languages/blade.tmLanguage.json',
-            embeddedLangs: ['html', 'php'],
-        }];
-        highlighter = await getHighlighter({ theme, langs });
+        const langs = ['html', 'php', 'js', 'json', 'vue', 'sh', 'blade'];
+        highlighter = await getHighlighter({ themes: [theme], langs });
 
         loaded.value = true;
         loading.value = false;
@@ -40,7 +34,7 @@ export const highlighter = () => {
             }]));
         }
 
-        return highlighter.codeToThemedTokens(text, lang, theme);
+        return highlighter.codeToTokensBase(text, { lang, theme });
     }
 
     return { install, getLines, loaded }
