@@ -1,8 +1,6 @@
 import { getHighlighter } from 'shiki';
 import { ref } from 'vue'
 
-const isServer = typeof window === 'undefined'
-
 export const highlighter = () => {
     const theme = 'github-dark';
     const loaded = ref(false);

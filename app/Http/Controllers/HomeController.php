@@ -8,7 +8,7 @@ use Inertia\Response;
 use Spatie\SchemaOrg\Schema;
 use Spatie\SchemaOrg\WebSite;
 
-class HomeController extends Controller
+class HomeController
 {
     public function __invoke(): Response
     {

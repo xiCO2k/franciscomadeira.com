@@ -8,7 +8,7 @@ use Inertia\Response;
 use Spatie\SchemaOrg\Article;
 use Spatie\SchemaOrg\Schema;
 
-class PostController extends Controller
+class PostController
 {
     public function __invoke(Post $post): Response
     {

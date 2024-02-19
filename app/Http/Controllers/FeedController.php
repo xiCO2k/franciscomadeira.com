@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Aschmelyun\BasicFeeds\Feed;
 
-class FeedController extends Controller
+class FeedController
 {
     public function __invoke()
     {
