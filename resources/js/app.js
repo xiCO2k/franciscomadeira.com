@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import MainLayout from './Shared/MainLayout.vue'
 import { Shiki } from './shiki'
 import twemoji from 'twemoji'
-import { ZiggyVue } from 'ziggy'
+import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
 createInertiaApp({
     resolve: async name => {

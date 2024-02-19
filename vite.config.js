@@ -20,7 +20,6 @@ export default defineConfig({
     resolve: {
         alias: {
             img: '/resources/img',
-            ziggy: '/vendor/tightenco/ziggy/dist/vue.m',
         },
     },
 });
