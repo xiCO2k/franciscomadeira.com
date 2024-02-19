@@ -1,12 +1,11 @@
-import { getHighlighter } from 'shiki';
+import { getHighlighterCore } from 'shiki/core'
+import getWasm from 'shiki/wasm'
 import { ref } from 'vue'
 
 export const highlighter = () => {
-    const theme = 'github-dark';
     const loaded = ref(false);
     const loading = ref(false);
     let highlighter;
-
 
     const install = async () => {
         if (highlighter || loading.value) {
@@ -15,8 +14,21 @@ export const highlighter = () => {
 
         loading.value = true;
 
-        const langs = ['html', 'php', 'js', 'json', 'vue', 'sh', 'blade'];
-        highlighter = await getHighlighter({ themes: [theme], langs });
+        highlighter = await getHighlighterCore({
+            themes: [
+                () => import('shiki/dist/themes/github-dark.mjs'),
+            ],
+            langs: [
+                () => import('shiki/dist/langs/html.mjs'),
+                () => import('shiki/dist/langs/php.mjs'),
+                () => import('shiki/dist/langs/javascript.mjs'),
+                () => import('shiki/dist/langs/json.mjs'),
+                () => import('shiki/dist/langs/vue.mjs'),
+                () => import('shiki/dist/langs/shellscript.mjs'),
+                () => import('shiki/dist/langs/blade.mjs'),
+            ],
+            loadWasm: getWasm,
+        });
 
         loaded.value = true;
         loading.value = false;
@@ -32,7 +44,10 @@ export const highlighter = () => {
             }]));
         }
 
-        return highlighter.codeToTokensBase(text, { lang, theme });
+        return highlighter.codeToTokensBase(text, {
+            lang,
+            theme: 'github-dark',
+        });
     }
 
     return { install, getLines, loaded }
