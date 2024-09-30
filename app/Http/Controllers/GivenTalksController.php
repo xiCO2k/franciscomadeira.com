@@ -16,7 +16,7 @@ class GivenTalksController
             'posts' => Post::where('is_hidden', false)
                 ->where('category', 'given-talks')
                 ->get()
-                ->map(fn ($post) => [
+                ->map(fn ($post): array => [
                     'id' => $post->id,
                     'slug' => $post->slug,
                     'title' => $post->title,

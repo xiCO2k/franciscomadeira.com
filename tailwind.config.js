@@ -1,15 +1,15 @@
-import aspectRatio from '@tailwindcss/aspect-ratio';
+import aspectRatio from "@tailwindcss/aspect-ratio";
 
 export default {
     content: [
-        './resources/views/**/*.blade.php',
-        './resources/js/**/*.js',
-        './resources/js/**/*.vue',
+        "./resources/views/**/*.blade.php",
+        "./resources/js/**/*.js",
+        "./resources/js/**/*.vue",
     ],
     theme: {
         extend: {
             fontFamily: {
-                mono: ['Monolisa', 'Roboto Mono', 'monospace'],
+                mono: ["Monolisa", "Roboto Mono", "monospace"],
             },
         },
     },
@@ -19,9 +19,9 @@ export default {
     plugins: [
         aspectRatio,
         ({ addVariant }) => {
-            addVariant('scrollbar', '&::-webkit-scrollbar')
-            addVariant('scrollbar-track', '&::-webkit-scrollbar-track')
-            addVariant('scrollbar-thumb', '&::-webkit-scrollbar-thumb')
+            addVariant("scrollbar", "&::-webkit-scrollbar");
+            addVariant("scrollbar-track", "&::-webkit-scrollbar-track");
+            addVariant("scrollbar-thumb", "&::-webkit-scrollbar-thumb");
         },
     ],
-}
+};

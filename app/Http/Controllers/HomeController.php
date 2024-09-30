@@ -17,7 +17,7 @@ class HomeController
                 ->where('category', 'blog')
                 ->orderByDesc('created_at')
                 ->get()
-                ->map(fn ($post) => [
+                ->map(fn ($post): array => [
                     'id' => $post->id,
                     'slug' => $post->slug,
                     'title' => $post->title,

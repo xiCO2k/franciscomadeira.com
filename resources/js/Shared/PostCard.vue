@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ post: Object })
+defineProps({ post: Object });
 </script>
 
 <template>
@@ -11,7 +11,9 @@ defineProps({ post: Object })
             <h2 v-emoji class="font-bold text-lg sm:text-3xl mb-4">
                 {{ post.title }}
             </h2>
-            <p class="text-xs leading-6 sm:text-base sm:leading-8 text-white text-opacity-70">
+            <p
+                class="text-xs leading-6 sm:text-base sm:leading-8 text-white text-opacity-70"
+            >
                 {{ post.description }}
             </p>
             <div class="mt-4 text-xs leading-6 sm:text-base sm:leading-8">

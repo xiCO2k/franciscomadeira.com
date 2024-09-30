@@ -1,29 +1,32 @@
 <script setup>
-import squareImgWebp from 'img/square.webp';
-import squareImg from 'img/square.jpg';
-import MainNav from './MainNav.vue'
+import squareImg from "img/square.jpg";
+import squareImgWebp from "img/square.webp";
+
+import MainNav from "./MainNav.vue";
 </script>
 
 <template>
     <header class="flex flex-col items-center pt-4 sm:pt-8 px-4">
         <picture>
-            <source type="image/webp" :srcset="squareImgWebp">
+            <source type="image/webp" :srcset="squareImgWebp" />
             <img
                 :src="squareImg"
                 class="w-36 h-36 sm:w-48 sm:h-48 border-8 border-gray-800 rounded-full mb-8"
                 width="192"
                 height="192"
                 alt="Francisco Madeira"
-            >
+            />
         </picture>
-        <h1
-            v-emoji
-            class="text-3xl sm:text-6xl font-bold tracking-tight"
-        >
+        <h1 v-emoji class="text-3xl sm:text-6xl font-bold tracking-tight">
             Hello World! 👋
         </h1>
         <h2 class="mt-4 text-lg text-center sm:text-2xl tracking-tight">
-            I'm <b>Francisco Madeira</b><br class="sm:hidden"><span class="hidden sm:inline"> - </span> Developer
+            I'm <b>Francisco Madeira</b><br class="sm:hidden" /><span
+                class="hidden sm:inline"
+            >
+                -
+            </span>
+            Developer
         </h2>
         <h3
             v-emoji

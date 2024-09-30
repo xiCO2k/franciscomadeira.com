@@ -9,12 +9,10 @@ class AddPostViewsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('post_views', function (Blueprint $table) {
+        Schema::create('post_views', function (Blueprint $table): void {
             $table->id();
             $table->foreignIdFor(Post::class)->constrained()->cascadeOnDelete();
             $table->string('ip');
@@ -25,10 +23,8 @@ class AddPostViewsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('post_views');
     }

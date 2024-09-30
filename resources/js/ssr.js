@@ -1,18 +1,19 @@
-import { createSSRApp, h } from 'vue'
-import { renderToString } from '@vue/server-renderer'
-import { createInertiaApp, Link, Head } from '@inertiajs/vue3'
-import MainLayout from './Shared/MainLayout.vue'
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
-import { Shiki } from './shiki'
-import twemoji from 'twemoji'
+import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
+import { renderToString } from "@vue/server-renderer";
+import twemoji from "twemoji";
+import { createSSRApp, h } from "vue";
+
+import { ZiggyVue } from "../../vendor/tightenco/ziggy";
+import MainLayout from "./Shared/MainLayout.vue";
+import { Shiki } from "./shiki";
 
 const page = JSON.parse(process.argv[2]);
 
 createInertiaApp({
     page,
     render: renderToString,
-    resolve: name => {
-        const pages = import.meta.globEager('./Pages/**/*.vue');
+    resolve: (name) => {
+        const pages = import.meta.globEager("./Pages/**/*.vue");
         const page = pages[`./Pages/${name}.vue`].default;
 
         if (page.layout === undefined) {
@@ -29,10 +30,12 @@ createInertiaApp({
                 ...page.props.ziggy,
                 location: new URL(page.props.ziggy.location),
             })
-            .component('Link', Link)
-            .component('Head', Head)
-            .directive('emoji', { beforeMount(el, binding) {
-                el.innerHTML = twemoji.parse(binding.value)
-            }});
+            .component("Link", Link)
+            .component("Head", Head)
+            .directive("emoji", {
+                beforeMount(el, binding) {
+                    el.innerHTML = twemoji.parse(binding.value);
+                },
+            });
     },
-}).then((output) => console.log(JSON.stringify(output)));
+}).then((output) => console.log(JSON.stringify(output))); // eslint-disable-line

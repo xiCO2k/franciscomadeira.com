@@ -1,12 +1,12 @@
-import laravel from 'laravel-vite-plugin'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue';
+import vue from "@vitejs/plugin-vue";
+import laravel from "laravel-vite-plugin";
+import { defineConfig } from "vite";
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: 'resources/js/app.js',
-            ssr: 'resources/js/ssr.js',
+            input: "resources/js/app.js",
+            ssr: "resources/js/ssr.js",
         }),
         vue({
             template: {
@@ -19,7 +19,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            img: '/resources/img',
+            img: "/resources/img",
         },
     },
 });

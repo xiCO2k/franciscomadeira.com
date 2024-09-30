@@ -14,7 +14,7 @@ final class Ssr
      */
     public static function register(): void
     {
-        app()->singleton(self::class, fn () => new self());
+        app()->singleton(self::class, fn (): Ssr => new self);
     }
 
     /**

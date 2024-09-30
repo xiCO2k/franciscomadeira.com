@@ -1,6 +1,6 @@
-import { getHighlighterCore } from 'shiki/core'
-import getWasm from 'shiki/wasm'
-import { ref } from 'vue'
+import { getHighlighterCore } from "shiki/core";
+import getWasm from "shiki/wasm";
+import { ref } from "vue";
 
 export const highlighter = () => {
     const loaded = ref(false);
@@ -15,17 +15,15 @@ export const highlighter = () => {
         loading.value = true;
 
         highlighter = await getHighlighterCore({
-            themes: [
-                () => import('shiki/dist/themes/github-dark.mjs'),
-            ],
+            themes: [() => import("shiki/dist/themes/github-dark.mjs")],
             langs: [
-                () => import('shiki/dist/langs/html.mjs'),
-                () => import('shiki/dist/langs/php.mjs'),
-                () => import('shiki/dist/langs/javascript.mjs'),
-                () => import('shiki/dist/langs/json.mjs'),
-                () => import('shiki/dist/langs/vue.mjs'),
-                () => import('shiki/dist/langs/shellscript.mjs'),
-                () => import('shiki/dist/langs/blade.mjs'),
+                () => import("shiki/dist/langs/html.mjs"),
+                () => import("shiki/dist/langs/php.mjs"),
+                () => import("shiki/dist/langs/javascript.mjs"),
+                () => import("shiki/dist/langs/json.mjs"),
+                () => import("shiki/dist/langs/vue.mjs"),
+                () => import("shiki/dist/langs/shellscript.mjs"),
+                () => import("shiki/dist/langs/blade.mjs"),
             ],
             loadWasm: getWasm,
         });
@@ -34,32 +32,34 @@ export const highlighter = () => {
         loading.value = false;
 
         return highlighter;
-    }
+    };
 
     const getLines = (text, lang) => {
-        if (! highlighter) {
-            return text.split(/\n/g).map((line) => ([{
-                color: '',
-                content: line,
-            }]));
+        if (!highlighter) {
+            return text.split(/\n/g).map((line) => [
+                {
+                    color: "",
+                    content: line,
+                },
+            ]);
         }
 
         return highlighter.codeToTokensBase(text, {
             lang,
-            theme: 'github-dark',
+            theme: "github-dark",
         });
-    }
+    };
 
-    return { install, getLines, loaded }
-}
+    return { install, getLines, loaded };
+};
 
 export const Shiki = {
     install: (app, shouldInstall = false) => {
         const instance = highlighter();
-        app.provide('highlighter', instance);
+        app.provide("highlighter", instance);
 
         if (shouldInstall) {
             instance.install();
         }
     },
-}
+};

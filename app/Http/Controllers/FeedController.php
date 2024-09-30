@@ -20,7 +20,7 @@ class FeedController
             ->where('category', 'blog')
             ->orderByDesc('created_at')
             ->get()
-            ->each(fn ($post) => $feed->entry([
+            ->each(fn ($post): Feed => $feed->entry([
                 'title' => $post->title,
                 'link' => route('post.detail', $post),
                 'summary' => $post->description,

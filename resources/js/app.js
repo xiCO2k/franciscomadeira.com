@@ -1,15 +1,22 @@
-import '../css/app.css';
-import { createApp, h } from 'vue'
-import { createInertiaApp, Link, Head } from '@inertiajs/vue3'
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import MainLayout from './Shared/MainLayout.vue'
-import { Shiki } from './shiki'
-import twemoji from 'twemoji'
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import "../css/app.css";
+
+import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
+import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import twemoji from "twemoji";
+import { createApp, h } from "vue";
+
+import { ZiggyVue } from "../../vendor/tightenco/ziggy";
+import MainLayout from "./Shared/MainLayout.vue";
+import { Shiki } from "./shiki";
 
 createInertiaApp({
-    resolve: async name => {
-        const page = (await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'))).default;
+    resolve: async (name) => {
+        const page = (
+            await resolvePageComponent(
+                `./Pages/${name}.vue`,
+                import.meta.glob("./Pages/**/*.vue"),
+            )
+        ).default;
 
         if (page.layout === undefined) {
             page.layout = MainLayout;
@@ -17,10 +24,10 @@ createInertiaApp({
 
         return page;
     },
-    title: title => {
-        const defaultTitle = 'Francisco Madeira';
+    title: (title) => {
+        const defaultTitle = "Francisco Madeira";
 
-        if (! title || title === defaultTitle) {
+        if (!title || title === defaultTitle) {
             return defaultTitle;
         }
 
@@ -31,11 +38,13 @@ createInertiaApp({
             .use(plugin)
             .use(Shiki)
             .use(ZiggyVue)
-            .component('Link', Link)
-            .component('Head', Head)
-            .directive('emoji', { mounted(el) {
-                el.innerHTML = twemoji.parse(el.innerHTML)
-            }})
-            .mount(el)
+            .component("Link", Link)
+            .component("Head", Head)
+            .directive("emoji", {
+                mounted(el) {
+                    el.innerHTML = twemoji.parse(el.innerHTML);
+                },
+            })
+            .mount(el);
     },
-})
+});

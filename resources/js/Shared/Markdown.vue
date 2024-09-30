@@ -1,7 +1,8 @@
 <script>
-import { useSlots, h, withDirectives, resolveDirective } from 'vue'
-import MarkdownIt from 'markdown-it'
-import CodeSnippet from './CodeSnippet.vue'
+import MarkdownIt from "markdown-it";
+import { h, resolveDirective, useSlots, withDirectives } from "vue";
+
+import CodeSnippet from "./CodeSnippet.vue";
 
 export default {
     setup() {
@@ -9,7 +10,10 @@ export default {
         const md = MarkdownIt({ html: true });
 
         const html = md.parse(
-            slots.default().map(element => element.children).join(''),
+            slots
+                .default()
+                .map((element) => element.children)
+                .join(""),
             {},
         );
 
@@ -17,14 +21,17 @@ export default {
             let tagOpen = {};
             let data = [];
 
-            tokens.forEach(token => {
-                if (! tagOpen.open && token.type.endsWith('_open')) {
+            tokens.forEach((token) => {
+                if (!tagOpen.open && token.type.endsWith("_open")) {
                     tagOpen = {
                         open: token,
                         close: null,
                         children: [],
                     };
-                } else if (tagOpen?.open?.tag === token.tag && token.type.endsWith('_close')) {
+                } else if (
+                    tagOpen?.open?.tag === token.tag &&
+                    token.type.endsWith("_close")
+                ) {
                     tagOpen.close = token;
                     tagOpen.children = parseTokens(tagOpen.children || []);
                     data.push({ ...tagOpen });
@@ -40,61 +47,68 @@ export default {
             });
 
             return data;
-        }
+        };
 
         const getOutput = (data) => {
             const attrs = (arr) => {
                 const args = {};
-                arr.forEach(([key, value]) => args[key] = value);
+                arr.forEach(([key, value]) => (args[key] = value));
                 return args;
-            }
+            };
 
             return data.map(({ open, children }) => {
-                if (open.tag === 'img') {
+                if (open.tag === "img") {
                     return h(open.tag, attrs(open.attrs));
                 }
 
-                const content = children?.length ? getOutput(children) : open.content;
+                const content = children?.length
+                    ? getOutput(children)
+                    : open.content;
 
-                if (open.tag === 'a') {
-                    return h(open.tag, {
-                        ...attrs(open.attrs),
-                        rel: 'noreferrer',
-                        target: '_blank',
-                    }, content);
-                }
-
-                if (open.tag === 'p') {
-                    return withDirectives(
-                        h(open.tag, content),
-                        [[resolveDirective('emoji')]],
+                if (open.tag === "a") {
+                    return h(
+                        open.tag,
+                        {
+                            ...attrs(open.attrs),
+                            rel: "noreferrer",
+                            target: "_blank",
+                        },
+                        content,
                     );
                 }
 
-                if (open.type === 'fence' && open.tag === 'code') {
-                    const [lang, name] = open.info.split(',');
-
-                    return h(CodeSnippet, {
-                        lang, name,
-                        lineNumbers: lang === 'sh' ? false : true,
-                    }, () => open.content);
+                if (open.tag === "p") {
+                    return withDirectives(h(open.tag, content), [
+                        [resolveDirective("emoji")],
+                    ]);
                 }
 
-                if (open.type === 'html_block') {
-                    return h('div', {
+                if (open.type === "fence" && open.tag === "code") {
+                    const [lang, name] = open.info.split(",");
+
+                    return h(
+                        CodeSnippet,
+                        {
+                            lang,
+                            name,
+                            lineNumbers: lang === "sh" ? false : true,
+                        },
+                        () => open.content,
+                    );
+                }
+
+                if (open.type === "html_block") {
+                    return h("div", {
                         innerHTML: open.content,
-                        class: 'mt-6 overflow-hidden w-full aspect-w-16 aspect-h-9',
+                        class: "mt-6 overflow-hidden w-full aspect-w-16 aspect-h-9",
                     });
                 }
 
-                return open.tag
-                    ? h(open.tag, content)
-                    : content;
+                return open.tag ? h(open.tag, content) : content;
             });
-        }
+        };
 
-        return () => getOutput(parseTokens(html))
+        return () => getOutput(parseTokens(html));
     },
-}
-
+};
 </script>

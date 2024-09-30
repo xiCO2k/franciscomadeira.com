@@ -1,6 +1,6 @@
 <script setup>
-import MainHeader from './MainHeader.vue'
-import MainFooter from './MainFooter.vue'
+import MainFooter from "./MainFooter.vue";
+import MainHeader from "./MainHeader.vue";
 </script>
 
 <template>
