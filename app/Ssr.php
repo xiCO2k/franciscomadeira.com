@@ -69,11 +69,13 @@ final class Ssr
 
         Log::info('SSR file path: '. $path);
 
-        $process = Process::fromShellCommandline(sprintf(
+        $process = Process::fromShellCommandline($cmd = sprintf(
             "node %s '%s'",
             $path,
             str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
+
+        Log::info($cmd);
 
         try {
             $process->run();
