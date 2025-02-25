@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 use Symfony\Component\Process\Process;
 use Tighten\Ziggy\Ziggy;
@@ -73,8 +74,8 @@ final class Ssr
 
         try {
             $process->run();
-        } catch (ProcessTimedOutException) {
-            // .
+        } catch (ProcessTimedOutException $e) {
+            Log::info('Unable to exec ssr node: '. $e->getMessage());
         }
 
         $output = $process->getOutput();
