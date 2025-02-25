@@ -67,7 +67,7 @@ final class Ssr
             ? base_path('bootstrap/ssr/ssr.js')
             : base_path('bootstrap/ssr/ssr.mjs');
 
-        Log::info('SSR file path', $path);
+        Log::info('SSR file path: '. $path);
 
         $process = Process::fromShellCommandline(sprintf(
             "node %s '%s'",
