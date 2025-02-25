@@ -83,7 +83,7 @@ final class Ssr
 
         $output = $process->getOutput();
 
-        Log::info('SSR page output', $output);
+        Log::info('SSR page output: '.$output);
 
         return json_decode($output !== '' && $output !== false ? $output : '[]', true);
     }
