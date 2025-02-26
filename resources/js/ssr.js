@@ -1,6 +1,6 @@
 import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
-import { renderToString } from "@vue/server-renderer";
 import twemoji from "@twemoji/api";
+import { renderToString } from "@vue/server-renderer";
 import { createSSRApp, h } from "vue";
 
 import { ZiggyVue } from "../../vendor/tightenco/ziggy";

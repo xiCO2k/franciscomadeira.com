@@ -56,6 +56,7 @@ final class Ssr
         if (! file_exists(base_path('bootstrap/ssr/ssr.js')) &&
             ! file_exists(base_path('bootstrap/ssr/ssr.mjs'))) {
             Log::error('No SSR build files');
+
             return [];
         }
 
@@ -67,25 +68,19 @@ final class Ssr
             ? base_path('bootstrap/ssr/ssr.js')
             : base_path('bootstrap/ssr/ssr.mjs');
 
-        Log::info('SSR file path: '. $path);
-
         $process = Process::fromShellCommandline($cmd = sprintf(
             "node %s '%s'",
             $path,
             str_replace("'", '\\u0027', (string) json_encode($page))
         ))->setTimeout(1);
 
-        Log::info($cmd);
-
         try {
             $process->run();
         } catch (ProcessTimedOutException $e) {
-            Log::info('Unable to exec ssr node: '. $e->getMessage());
+            Log::info('Unable to exec ssr node: '.$e->getMessage());
         }
 
         $output = $process->getOutput();
-
-        Log::info('SSR page output: '.$output);
 
         return json_decode($output !== '' && $output !== false ? $output : '[]', true);
     }
