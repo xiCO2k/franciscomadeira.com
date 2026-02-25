@@ -68,11 +68,8 @@ final class Ssr
             ? base_path('bootstrap/ssr/ssr.js')
             : base_path('bootstrap/ssr/ssr.mjs');
 
-        $process = Process::fromShellCommandline($cmd = sprintf(
-            "node %s '%s'",
-            $path,
-            str_replace("'", '\\u0027', (string) json_encode($page))
-        ))->setTimeout(1);
+        $process = (new Process(['node', $path]))->setTimeout(1);
+        $process->setInput((string) json_encode($page));
 
         try {
             $process->run();

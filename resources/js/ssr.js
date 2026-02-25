@@ -7,7 +7,9 @@ import { ZiggyVue } from "../../vendor/tightenco/ziggy";
 import MainLayout from "./Shared/MainLayout.vue";
 import { Shiki } from "./shiki";
 
-const page = JSON.parse(process.argv[2]);
+const page = JSON.parse(
+    process.argv[2] ?? require("fs").readFileSync("/dev/stdin", "utf-8"),
+);
 
 createInertiaApp({
     page,
