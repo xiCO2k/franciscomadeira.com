@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import { createInertiaApp, Head, Link } from "@inertiajs/vue3";
 import twemoji from "@twemoji/api";
 import { renderToString } from "@vue/server-renderer";
@@ -8,7 +9,7 @@ import MainLayout from "./Shared/MainLayout.vue";
 import { Shiki } from "./shiki";
 
 const page = JSON.parse(
-    process.argv[2] ?? require("fs").readFileSync("/dev/stdin", "utf-8"),
+    process.argv[2] ?? readFileSync("/dev/stdin", "utf-8"),
 );
 
 createInertiaApp({
