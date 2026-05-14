@@ -7,23 +7,23 @@
     "require": {
         "php": "^8.2",
         "aschmelyun/basic-feeds": "^1.0",
-        "aws/aws-sdk-php": "^2.1",
-        "inertiajs/inertia-laravel": "^1.0",
-        "laravel/framework": "^11.0",
+        "aws/aws-sdk-php": "^3.0",
+        "inertiajs/inertia-laravel": "^2.0",
+        "laravel/framework": "^12.0",
         "laravel/tinker": "^2.9",
         "spatie/schema-org": "^3.23",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "larastan/larastan": "^2.9",
+        "larastan/larastan": "^3.0",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
         "pestphp/pest": "^3.2",
         "pestphp/pest-plugin-laravel": "^3.0",
-        "rector/rector": "^1.2"
+        "rector/rector": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -62,7 +62,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "11.x-dev"
+            "dev-master": "12.x-dev"
         },
         "laravel": {
             "dont-discover": []
