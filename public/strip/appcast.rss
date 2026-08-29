@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Strip</title>
+        <item>
+            <title>0.6.12</title>
+            <pubDate>Sat, 29 Aug 2026 15:39:26 +0100</pubDate>
+            <link>https://franciscomadeira.com</link>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>0.6.12</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <sparkle:releaseNotesLink sparkle:edSignature="WXpKvTwPGfBKHnbAw3Mn6ddMyQnzjuWXL2chO98tf9PEqREEv0QBfrZ8XK9u+/w3IUDTYjzVJvVE5UPVtlQoDg==" sparkle:length="996">https://franciscomadeira.com/strip/Strip-0.6.12.md</sparkle:releaseNotesLink>
+            <enclosure url="https://franciscomadeira.com/strip/Strip-0.6.12.zip" length="2631102" type="application/octet-stream" sparkle:edSignature="QNkAdsAusMcos51yVyooU/WGmMPHvwqs1QhnSVoz6FsNWsTrsJIwfCjig3GYLiVYcrP34+2HpipQRTAnwmH3Ag=="></enclosure>
+        </item>
+    </channel>
+</rss><!-- sparkle-signatures:
+edSignature: If0BRxSOswhQohUjs3snmAsmnFVDbK32UaKlqadoD6J+Ypijevf/2Vz0TXowcXRyhi/claLErhxNT8ymHAf+DA==
+length: 1393
+-->
