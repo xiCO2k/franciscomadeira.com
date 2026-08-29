@@ -6,6 +6,17 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Strip</title>
         <item>
+            <title>0.6.13</title>
+            <pubDate>Sat, 29 Aug 2026 16:16:40 +0100</pubDate>
+            <link>https://franciscomadeira.com</link>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>0.6.13</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <sparkle:releaseNotesLink sparkle:edSignature="AkWV0Ru+bYzb/WkvnU1R74AW72MHX4fCu7CmKbrtdST/WFKLwmQjH5pjsLKFHHRkQRh32b2nqIgG2zXhuTVbDA==" sparkle:length="557">https://franciscomadeira.com/strip/Strip-0.6.13.md</sparkle:releaseNotesLink>
+            <enclosure url="https://franciscomadeira.com/strip/Strip-0.6.13.zip" length="2631085" type="application/octet-stream" sparkle:edSignature="NJG3ABDiIC9tmKXLpUh/71+L41sDEI06IqkZ6Lw6RQ+TRoy0RdSivcQe8MSp7aiTmhZp0hlAv2yntRs1OZw4DQ=="/>
+        </item>
+        <item>
             <title>0.6.12</title>
             <pubDate>Sat, 29 Aug 2026 15:39:26 +0100</pubDate>
             <link>https://franciscomadeira.com</link>
@@ -19,6 +30,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: h8snyNXSRzngMgf9JldQTKF4LhlM1ZY+IZpuJIInKKcCYb1MA6h/xsYXa9YqzFm4uoxZGirT4fFfI7fSYaFwCA==
-length: 1385
+edSignature: yZhv5kC+1cO8nf2aFkp+OkEEIRhZ1S6QuAvdsi7Joxl0l9/vmjdgz37zl8xECL0lT49gzqSXeghmCjm2BLDsCQ==
+length: 2341
 -->
