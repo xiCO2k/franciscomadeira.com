@@ -13,6 +13,7 @@
 Homestead.json
 Homestead.yaml
 auth.json
+cloud-api-token
 npm-debug.log
 yarn-error.log
 /.fleet
