@@ -3,6 +3,7 @@
 namespace App\Services\Strip;
 
 use DateTimeImmutable;
+use DateTimeZone;
 use DOMDocument;
 use DOMElement;
 use DOMNode;
@@ -83,7 +84,9 @@ class SparkleReleaseVerifier
         $this->verifyDetachedSignature($notesSignature, $notes, $publicKey, 'release notes');
 
         try {
-            $publishedAt = new DateTimeImmutable($this->elementText($xpath, './pubDate', $item));
+            $publishedAt = (new DateTimeImmutable(
+                $this->elementText($xpath, './pubDate', $item),
+            ))->setTimezone(new DateTimeZone('UTC'));
         } catch (Throwable) {
             throw new InvalidStripRelease('The appcast publication date is invalid.');
         }

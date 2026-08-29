@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\CarbonImmutable;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,8 +17,12 @@ beforeEach(function () {
     Storage::fake('strip_releases');
 });
 
-function stripReleasePayload(string $version = '0.6.14', int $build = 14, string $salt = ''): array
-{
+function stripReleasePayload(
+    string $version = '0.6.14',
+    int $build = 14,
+    string $salt = '',
+    string $publishedAt = 'Sat, 29 Aug 2026 14:00:00 +0100',
+): array {
     $keyPair = sodium_crypto_sign_seed_keypair(str_repeat("\x07", SODIUM_CRYPTO_SIGN_SEEDBYTES));
     $secretKey = sodium_crypto_sign_secretkey($keyPair);
     $archive = "signed Strip archive {$version} {$salt}";
@@ -35,7 +40,7 @@ function stripReleasePayload(string $version = '0.6.14', int $build = 14, string
         <title>Strip</title>
         <item>
             <title>{$version}</title>
-            <pubDate>Sat, 29 Aug 2026 14:00:00 +0100</pubDate>
+            <pubDate>{$publishedAt}</pubDate>
             <link>https://franciscomadeira.com</link>
             <sparkle:version>{$build}</sparkle:version>
             <sparkle:shortVersionString>{$version}</sparkle:shortVersionString>
@@ -121,6 +126,26 @@ it('publishes a cryptographically verified release and signed feed', function ()
     $notes = $this->get('/strip/Strip-0.6.14.md');
     $notes->assertOk()->assertHeader('Content-Type', 'text/markdown; charset=utf-8');
     expect($notes->streamedContent())->toBe($payload['_notes']);
+});
+
+it('normalizes offset publication dates to UTC before persistence', function () {
+    CarbonImmutable::setTestNow('2026-08-29T17:00:01+00:00');
+
+    try {
+        $payload = stripReleasePayload(
+            publishedAt: 'Sat, 29 Aug 2026 18:00:00 +0100',
+        );
+
+        publishStripRelease($payload)->assertCreated();
+
+        $this->assertDatabaseHas('strip_releases', [
+            'version' => '0.6.14',
+            'published_at' => '2026-08-29 17:00:00',
+        ]);
+        $this->get('/strip/Strip-0.6.14.zip')->assertOk();
+    } finally {
+        CarbonImmutable::setTestNow();
+    }
 });
 
 it('is idempotent for byte-identical releases', function () {
