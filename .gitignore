@@ -15,6 +15,7 @@ Homestead.yaml
 auth.json
 cloud-api-token
 strip-publisher-token
+frozen-publisher-token
 strip-storage-credentials
 npm-debug.log
 yarn-error.log

@@ -20,5 +20,9 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('strip-publisher', function (Request $request): Limit {
             return Limit::perMinute(5)->by((string) $request->ip());
         });
+
+        RateLimiter::for('frozen-publisher', function (Request $request): Limit {
+            return Limit::perMinute(5)->by((string) $request->ip());
+        });
     }
 }

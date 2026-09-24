@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\Frozen\FrozenAppcastController;
+use App\Http\Controllers\Frozen\FrozenReleaseAssetController;
 use App\Http\Controllers\GivenTalksController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
@@ -18,4 +20,11 @@ Route::get('/strip/Strip-{release:version}.zip', [StripReleaseAssetController::c
 Route::get('/strip/Strip-{release:version}.md', [StripReleaseAssetController::class, 'notes'])
     ->where('release', '[0-9]+\.[0-9]+\.[0-9]+')
     ->name('strip.release.notes');
+Route::get('/frozen/appcast.rss', FrozenAppcastController::class)->name('frozen.appcast');
+Route::get('/frozen/Frozen-{release:version}.zip', [FrozenReleaseAssetController::class, 'archive'])
+    ->where('release', '[0-9]+\.[0-9]+\.[0-9]+')
+    ->name('frozen.release.archive');
+Route::get('/frozen/Frozen-{release:version}.md', [FrozenReleaseAssetController::class, 'notes'])
+    ->where('release', '[0-9]+\.[0-9]+\.[0-9]+')
+    ->name('frozen.release.notes');
 Route::get('/{post:slug}', PostController::class)->name('post.detail');

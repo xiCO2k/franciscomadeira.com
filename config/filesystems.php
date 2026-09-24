@@ -46,6 +46,19 @@ return [
             'throw' => true,
             'report' => true,
         ],
+
+        'frozen_releases' => [
+            'driver' => 's3',
+            'key' => env('FROZEN_STORAGE_KEY'),
+            'secret' => env('FROZEN_STORAGE_SECRET'),
+            'region' => env('FROZEN_STORAGE_REGION', 'auto'),
+            'bucket' => env('FROZEN_STORAGE_BUCKET'),
+            'endpoint' => env('FROZEN_STORAGE_ENDPOINT'),
+            'use_path_style_endpoint' => env('FROZEN_STORAGE_PATH_STYLE', true),
+            'visibility' => 'private',
+            'throw' => true,
+            'report' => true,
+        ],
     ],
 
     'links' => [
