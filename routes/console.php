@@ -10,9 +10,12 @@ Schedule::call(function () {
     Log::info('Dummy cleanup: pretending to clear temp files at '.now()->toDateTimeString());
 })->hourly()->name('dummy:cleanup');
 
-// Dispatch a heartbeat to the managed queue every minute, to watch it stop when retired.
+// Send a heartbeat to the managed queue every minute, to watch it stop when retired.
+// Every heartbeat logs "SENT" here and "PROCESSED" from the queue worker, with the same name.
 Schedule::call(function () {
-    ProcessHeartbeat::dispatch(now()->toDateTimeString())->onGroup('heartbeat');
+    $sentAt = now();
 
-    Log::info('Queue heartbeat dispatched at '.now()->toDateTimeString());
+    ProcessHeartbeat::dispatch($sentAt->toDateTimeString())->onGroup('heartbeat');
+
+    Log::info("[QUEUE HEARTBEAT {$sentAt->format('H:i')}] SENT to the managed queue.");
 })->everyMinute()->name('queue:heartbeat');
