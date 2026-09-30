@@ -8,7 +8,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 
 /**
- * A tiny job sent to the default queue every minute. Each heartbeat logs a SENT line
+ * A tiny job sent to the database queue every minute. Each heartbeat logs a SENT line
  * (from the scheduler) and a PROCESSED line (from the queue worker), so it is
  * easy to see when the queue stops (and resumes) processing jobs.
  */

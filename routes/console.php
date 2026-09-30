@@ -10,12 +10,12 @@ Schedule::call(function () {
     Log::info('Dummy cleanup: pretending to clear temp files at '.now()->toDateTimeString());
 })->hourly()->name('dummy:cleanup');
 
-// Send a heartbeat to the default queue every minute, to watch its worker stop when retired.
+// Send a heartbeat to the database queue every minute, to watch the queue cluster worker stop when retired.
 // Every heartbeat logs "SENT" here and "PROCESSED" from the queue worker, with the same name.
 Schedule::call(function () {
     $sentAt = now();
 
-    ProcessHeartbeat::dispatch($sentAt->toDateTimeString());
+    ProcessHeartbeat::dispatch($sentAt->toDateTimeString())->onConnection('database');
 
-    Log::info("[QUEUE HEARTBEAT {$sentAt->format('H:i')}] SENT to the default queue.");
+    Log::info("[QUEUE HEARTBEAT {$sentAt->format('H:i')}] SENT to the database queue.");
 })->everyMinute()->name('queue:heartbeat');
