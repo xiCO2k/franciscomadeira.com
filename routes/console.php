@@ -12,7 +12,7 @@ Schedule::call(function () {
 
 // Dispatch a heartbeat to the managed queue every minute, to watch it stop when retired.
 Schedule::call(function () {
-    ProcessHeartbeat::dispatch(now()->toDateTimeString());
+    ProcessHeartbeat::dispatch(now()->toDateTimeString())->onGroup('heartbeat');
 
     Log::info('Queue heartbeat dispatched at '.now()->toDateTimeString());
 })->everyMinute()->name('queue:heartbeat');
